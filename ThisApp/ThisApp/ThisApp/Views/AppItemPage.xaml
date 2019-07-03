@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThisApp.AppItemPage"
+						 Title="App Items Page"
+						 BackgroundImage="cornflowerback.png">
+	<StackLayout>
+
+		<Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+			<!--MainPageGrid-->
+			<Grid.RowDefinitions>
+				<!--Heading-->
+				<RowDefinition Height="*"></RowDefinition>
+				<!--NameandSurname-->
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+			<!--ButtonGrid-->
+			<Grid Padding="15,15,15,15" Grid.Row="2" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<!--<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="0" Grid.Row="1"></Button>
+				<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="0" Grid.Row="2"></Button>-->
+				<Button Style="{StaticResource ButtonSmallBlue}" Text="Random Fact API" Grid.Column="0" Grid.Row="0" Clicked="OnRandomFactPageClicked"></Button>
+				<Button Style="{StaticResource ButtonSmallBlue}" Text="Images Scroll" Grid.Column="1" Grid.Row="0" Clicked="OnScrollImagesPageClicked"></Button>
+				<!--<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="1" Grid.Row="1"></Button>
+				<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="1" Grid.Row="2"></Button>-->
+			</Grid>
+			<Label Style="{StaticResource LabelHeading}" Text="Welcome" Grid.Row="0"/>
+			<Label Style="{StaticResource LabelText}" Text="{Binding FullName}" Grid.Row="1"/>
+		</Grid>
+	</StackLayout>
+</ContentPage>
