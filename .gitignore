@@ -1,0 +1,13 @@
+ThisApp/ThisApp/ThisApp/obj/*
+ThisApp/ThisApp/ThisApp/bin/.
+ThisApp/ThisApp/UWP/obj/*
+ThisApp/ThisApp/UWP/bin/.
+ThisApp/ThisApp/Android/obj/*
+ThisApp/ThisApp/Android/bin/.
+ThisApp/ThisApp/iOS/obj/*
+ThisApp/ThisApp/iOS/bin/.
+ThisApp/.vs/ThisApp/v15/.suo
+ThisApp/.vs/ThisApp/v15/Server/sqlite3/storage.ide
+ThisApp/.vs/ThisApp/v15/Server/sqlite3/storage.ide-shm
+ThisApp/.vs/ThisApp/v15/Server/sqlite3/storage.ide-wal
+
