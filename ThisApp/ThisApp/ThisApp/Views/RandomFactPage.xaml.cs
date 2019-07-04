@@ -23,10 +23,8 @@ namespace ThisApp.Views
 
 		public async void OnClicked (object o, EventArgs e)
 		{
-
-			var url = "https://randomuselessfact.appspot.com/random.json";
+			var url = "https://randomuselessfact.appspot.com/random.json?language=en";
 			await vm.GetRandomFactAsync(url);
 		}
-
 	}
 }

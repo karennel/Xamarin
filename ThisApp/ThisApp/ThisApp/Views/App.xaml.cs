@@ -4,7 +4,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 
-
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ThisApp
 {
@@ -21,6 +20,7 @@ namespace ThisApp
 
 		protected override void OnStart()
 		{
+			
 			// Handle when your app starts
 		}
 

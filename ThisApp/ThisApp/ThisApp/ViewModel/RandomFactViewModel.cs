@@ -94,7 +94,6 @@ namespace ThisApp.ViewModel
 			Source = source;
 		}
 
-		//public RandomFactViewModel() { }
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")  

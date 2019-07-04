@@ -33,7 +33,7 @@
 				<!--<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="0" Grid.Row="1"></Button>
 				<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="0" Grid.Row="2"></Button>-->
 				<Button Style="{StaticResource ButtonSmallBlue}" Text="Random Fact API" Grid.Column="0" Grid.Row="0" Clicked="OnRandomFactPageClicked"></Button>
-				<Button Style="{StaticResource ButtonSmallBlue}" Text="Images Scroll" Grid.Column="1" Grid.Row="0" Clicked="OnScrollImagesPageClicked"></Button>
+				<!--<Button Style="{StaticResource ButtonSmallBlue}" Text="Images Scroll" Grid.Column="1" Grid.Row="0" Clicked="OnScrollImagesPageClicked"></Button>-->
 				<!--<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="1" Grid.Row="1"></Button>
 				<Button Style="{StaticResource ButtonSmallBlue}" Text="" Grid.Column="1" Grid.Row="2"></Button>-->
 			</Grid>

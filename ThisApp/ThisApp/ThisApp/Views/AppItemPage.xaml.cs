@@ -18,16 +18,6 @@ namespace ThisApp
 			InitializeComponent ();
 		}
 
-		void OnImagesPageClicked(object sender, EventArgs e)
-		{
-			Navigation.PushAsync(new SelectImagesView());
-		}
-
-		void OnScrollImagesPageClicked(object sender, EventArgs e)
-		{
-			Navigation.PushAsync(new ImagesScrollPage());
-		}
-
 		private void OnRandomFactPageClicked(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new RandomFactPage());
