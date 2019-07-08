@@ -8,11 +8,14 @@ using System.Drawing;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using UIKit;
+using ThisApp.Services.DeviceInfo;
 
 namespace ThisApp.iOS.Extensions
 {
 	public static class UIKitExtensions
 	{
+
+		static Lazy<IDisplay> _display = new Lazy<IDisplay>(() => ObjectFactory.Get<IDisplay>());
 
 		public static void DisposeCustomKeyboard(this UITextField textField)
 		{
@@ -102,5 +105,16 @@ namespace ThisApp.iOS.Extensions
 			foreach (var subview in view.Subviews)
 				subview.TranslatesAutoresizingMaskIntoConstraints = false;
 		}
+
+		static VisualElement GetPrevious(this IKeyboardToolbar keyboardToolbar)
+		{
+			return keyboardToolbar.PreviousAction == null ? keyboardToolbar.Previous : keyboardToolbar.PreviousAction();
+		}
+
+		static VisualElement GetNext(this IKeyboardToolbar keyboardToolbar)
+		{
+			return keyboardToolbar.NextAction == null ? keyboardToolbar.Next : keyboardToolbar.NextAction();
+		}
+
 	}
 }

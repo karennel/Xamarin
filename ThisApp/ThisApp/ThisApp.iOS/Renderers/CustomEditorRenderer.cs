@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 [assembly: ExportRenderer(typeof(CustomEditor), typeof(CustomEditorRenderer))]
 
-namespace Bateleur.Platform.iOS.Renderers
+namespace ThisApp.iOS.Renderers
 {
 	public class CustomEditorRenderer : EditorRenderer
 	{

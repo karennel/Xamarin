@@ -52,6 +52,8 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -93,6 +95,7 @@
     <Compile Include="Extensions\FluentLayout.cs" />
     <Compile Include="Extensions\LayoutExtensions.cs" />
     <Compile Include="Extensions\UIKitExtensions.cs" />
+    <Compile Include="Extensions\UIViewAndLayoutAttributes.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\CustomEditorRenderer.cs" />
@@ -103,7 +106,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\background.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\background.imageset\cornflowerback.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -165,5 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Effects\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

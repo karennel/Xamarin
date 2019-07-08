@@ -1,5 +1,5 @@
 ﻿using System;
-
+using ThisApp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace ThisApp
 
 
 			//MainPage = new MainPage();
+			//MainPage = new NavigationPage(new TestView());
 			MainPage = new NavigationPage(new MainPage());
 		}
 
