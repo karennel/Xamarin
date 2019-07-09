@@ -12,3 +12,15 @@ ThisApp/.vs/ThisApp/v15/Server/sqlite3/storage.ide-shm
 ThisApp/.vs/ThisApp/v15/Server/sqlite3/storage.ide-wal
 com.kn.ThisApp.apk
 ThisApp/.vs/*
+RandomApp/RandomApp/RandomApp/obj/*
+RandomApp/RandomApp/RandomApp/bin/*
+RandomApp/RandomApp/RandomApp.Android/obj/*
+RandomApp/RandomApp/RandomApp.Android/bin/*
+RandomApp/RandomApp/RandomApp.iOS/obj/*
+RandomApp/RandomApp/RandomApp.iOS/bin/*
+RandomApp/.vs/RandomApp/v15/.suo
+RandomApp/.vs/RandomApp/v15/Server/sqlite3/storage.ide
+RandomApp/.vs/RandomApp/v15/Server/sqlite3/storage.ide-shm
+RandomApp/.vs/RandomApp/v15/Server/sqlite3/storage.ide-wal
+com.kn.RandomApp.apk
+RandomApp/.vs/*
