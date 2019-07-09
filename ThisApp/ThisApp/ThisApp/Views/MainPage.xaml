@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:ThisApp.Controls"
              xmlns:behaviour="clr-namespace:ThisApp.Behaviour"
              x:Class="ThisApp.MainPage"
-						 Title="Main Page">
-	<!--BackgroundImage="cornflowerback.png">-->
+						 Title="Main Page"
+						BackgroundImage="woodbackground.jpg">
 
 	<ContentView>
 		<StackLayout Margin="10,20,10,30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
@@ -26,9 +26,9 @@
 				<local:CustomEntry Grid.Row="1" x:Name="Surname" 
 							Placeholder="Surname"
 							Style="{StaticResource EntryFieldBase}">
-				<Entry.Behaviors>
-					<behaviour:AlphaEntryBehaviour/>
-				</Entry.Behaviors>
+					<Entry.Behaviors>
+						<behaviour:AlphaEntryBehaviour/>
+					</Entry.Behaviors>
 				</local:CustomEntry>
 				<Button Grid.Row="2" 
 							Text="Enter" 

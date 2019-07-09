@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "scale": "2x",
+      "idiom": "universal",
+      "filename": "woodbackground2.jpg"
+    },
+    {
+      "scale": "3x",
+      "idiom": "universal",
+      "filename": "woodbackground3.jpg"
+    },
+    {
+      "scale": "1x",
+      "idiom": "universal",
+      "filename": "woodbackground.jpg"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}
