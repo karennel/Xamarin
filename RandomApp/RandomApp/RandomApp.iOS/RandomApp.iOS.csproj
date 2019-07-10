@@ -64,8 +64,15 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Extensions\FluentLayout.cs" />
+    <Compile Include="Extensions\LayoutExtensions.cs" />
+    <Compile Include="Extensions\UIViewAndLayoutAttributes.cs" />
+    <Compile Include="Extensions\UIKitExtensions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\CustomEditorRenderer.cs" />
+    <Compile Include="Renderers\CustomEntryRenderer.cs" />
+    <Compile Include="Renderers\CustomPickerRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,9 +98,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\splash.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash.imageset\splash.pdf">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -138,7 +142,13 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash.imageset\template1.jpg">
+    <ImageAsset Include="Assets.xcassets\splash.imageset\splash@11.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.imageset\splash@21.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.imageset\splash@32.jpg">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
@@ -161,4 +171,5 @@
       <Name>RandomApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
 </Project>

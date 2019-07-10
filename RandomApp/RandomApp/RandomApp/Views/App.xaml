@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RandomApp.App">
+	<Application.Resources>
+		<ResourceDictionary>
+
+			<!--<ControlTemplate x:Key="AppItemControlTemplate">
+				<AbsoluteLayout>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+					
+					</Grid>
+				</AbsoluteLayout>
+			</ControlTemplate>-->
+
+			<!--Fonts-->
+			<!--TODO - add IOS Fonts-->
+
+			<OnPlatform x:Key="RobotoBlack" x:TypeArguments="x:String" Android="Roboto-Black.ttf#Roboto-Black" iOS="Roboto-Black"/>
+			<OnPlatform x:Key="RobotoBlackItalic" x:TypeArguments="x:String" Android="Roboto-BlackItalic.ttf#Roboto-BlackItalic" iOS="Roboto-BlackItalic"/>
+			<OnPlatform x:Key="RobotoBold" x:TypeArguments="x:String" Android="Roboto-Bold.ttf#Roboto-Bold" iOS="Roboto-Bold"/>
+			<OnPlatform x:Key="RobotoBoldItalic" x:TypeArguments="x:String" Android="Roboto-BoldItalic.ttf#Roboto-BoldItalic" iOS="Roboto-BoldItalic"/>
+			<OnPlatform x:Key="RobotoItalic" x:TypeArguments="x:String" Android="Roboto-Italic.ttf#Roboto-Italic" iOS="Roboto-Italic"/>
+			<OnPlatform x:Key="RobotoRegular" x:TypeArguments="x:String" Android="Roboto-Regular.ttf#Roboto-Regular" iOS="Roboto-Regular"/>
+			<OnPlatform x:Key="RobotoLight" x:TypeArguments="x:String" Android="Roboto-Light.ttf#Roboto-Light" iOS="Roboto-Light"/>
+			<OnPlatform x:Key="RobotoLightItalic" x:TypeArguments="x:String" Android="Roboto-LightItalic.ttf#Roboto-LightItalic" iOS="Roboto-LightItalic"/>
+			<OnPlatform x:Key="RobotoMedium" x:TypeArguments="x:String" Android="Roboto-Medium.ttf#Roboto-Medium" iOS="Roboto-Medium"/>
+			<OnPlatform x:Key="RobotoMediumItalic" x:TypeArguments="x:String" Android="Roboto-MediumItalic.ttf#Roboto-MediumItalic" iOS="Roboto-MediumItalic"/>
+			<OnPlatform x:Key="RobotoThin" x:TypeArguments="x:String" Android="Roboto-Thin.ttf#Roboto-Thin" iOS="Roboto-Thin"/>
+			<OnPlatform x:Key="RobotoThinItalic" x:TypeArguments="x:String" Android="Roboto-ThinItalic.ttf#Roboto-ThinItalic" iOS="Roboto-ThinItalic"/>
+
+			<!--Font Sizes-->
+			<x:Double x:Key="FontSize11">11</x:Double>
+			<x:Double x:Key="FontSizeMicro">12</x:Double>
+			<x:Double x:Key="FontSizeSmall">14</x:Double>
+			<x:Double x:Key="FontSizeMedium">16</x:Double>
+			<x:Double x:Key="FontSize18">18</x:Double>
+			<x:Double x:Key="FontSize22">22</x:Double>
+			<x:Double x:Key="FontSizeLarge">30</x:Double>
+			<x:Double x:Key="FontSizeGigantic">40</x:Double>
+
+			<!--Platform specific-->
+			<OnPlatform x:Key="ButtonHeight" x:TypeArguments="x:Double" Android="50.0" iOS="40.0" />
+			<OnPlatform x:Key="ButtonBorderRadius" x:TypeArguments="x:Int32" Android="50" iOS="22" />
+
+			<!--Colors-->
+			<Color x:Key="ColorDarkGrey">#2C3E50</Color>
+			<!--<Color x:Key="ColorCornflowerBlue">#6495ed</Color>
+			<Color x:Key="ColorCornflowerBlueDark">#26428B</Color>
+			<Color x:Key="ColorCornflowerBlueLight">#92b4f2</Color>-->
+
+			<Color x:Key="ColorFawn">#E0AC69</Color>
+			<Color x:Key="ColorMellowApricot">#F1C27D</Color>
+			<Color x:Key="ColorNavajoWhite">#FFDBAC</Color> 
+
+
+			<Color x:Key="ColorOrange">Orange</Color>
+			<Color x:Key="ColorPink">Pink</Color>
+			<Color x:Key="ColorWhite">White</Color>
+			<Color x:Key="ColorAcceptButton">#274659</Color>
+			<Color x:Key="ColorGray2">#A6A8AA</Color>
+
+			<!--Button styles-->
+			<Style x:Key="ButtonBase" TargetType="Button">
+				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
+				<Setter Property="FontFamily" Value="{StaticResource RobotoRegular}" />
+				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
+				<Setter Property="HeightRequest" Value="{StaticResource ButtonHeight}" />
+			</Style>
+
+			<Style x:Key="ButtonTransparent" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+				<Setter Property="WidthRequest" Value="120"></Setter>
+				<Setter Property="BackgroundColor" Value="Transparent"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
+				<Setter Property="BorderColor" Value="White"></Setter>
+				<Setter Property="BorderWidth" Value="2"></Setter>
+			</Style>
+
+			<Style x:Key="ButtonSmallBlue" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
+				<Setter Property="WidthRequest" Value="120"></Setter>
+				<Setter Property="BorderColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorFawn}" />
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
+				<Setter Property="BorderWidth" Value="2"></Setter>
+			</Style>
+
+			<Style x:Key="ButtonNarrowBlue" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
+				<Setter Property="WidthRequest" Value="40"></Setter>
+				<Setter Property="BorderColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorFawn}" />
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
+				<Setter Property="BorderWidth" Value="2"></Setter>
+			</Style>
+
+			<Style x:Key="EntryFieldBase" TargetType="Entry">
+				<Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="PlaceholderColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorFawn}"></Setter>
+				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+				<Style.Triggers>
+					<Trigger TargetType="Entry" Property="IsFocused" Value="true">
+						<Setter Property="BackgroundColor" Value="{StaticResource ColorNavajoWhite}"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+
+			<Style x:Key="PickerBase" TargetType="Picker">
+				<Setter Property="WidthRequest" Value="50"></Setter>
+				<Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="VerticalOptions" Value="Center"></Setter>
+			</Style>
+
+			<Style x:Key="LabelHeading" TargetType="Label">
+				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeGigantic}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+			</Style>
+
+			<Style x:Key="LabelTwoHeading" TargetType="Label">
+				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+			</Style>
+
+			<Style x:Key="DisplayEditor" TargetType="Editor">
+				<Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeSmall}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="PlaceholderColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="IsSpellCheckEnabled" Value="False"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorNavajoWhite}"></Setter>
+			</Style>
+
+			<Style x:Key="LabelText" TargetType="Label">
+				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>
