@@ -10,7 +10,7 @@ namespace RandomApp.Droid
 
 	[Activity
 	 (
-		 Label = "Bateleur",
+		 Label = "RandomApp",
 		 MainLauncher = true,
 		 NoHistory = true,
 		 ScreenOrientation = ScreenOrientation.Portrait,

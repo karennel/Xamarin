@@ -14,7 +14,7 @@ namespace RandomApp.Droid.Effects
 
 		protected override void OnAttached()
 		{
-			backgroundcolor = Android.Graphics.Color.CornflowerBlue;
+			backgroundcolor = Android.Graphics.Color.Beige;
 			Control.SetBackgroundColor(backgroundcolor);
 		}
 

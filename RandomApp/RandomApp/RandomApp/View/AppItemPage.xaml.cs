@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandomApp.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,8 @@ namespace RandomApp.Views
 
 		private void OnRandomFactPageClicked(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new RandomFactPage());
+			//DisplayAlert("Alert Title", "On Random Fact Page Clicked", "OK");
+			Navigation.PushAsync(new RandomFactPage());
 		}
 	}
 }

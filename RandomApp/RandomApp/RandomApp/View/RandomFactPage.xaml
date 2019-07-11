@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+						 xmlns:local="clr-namespace:RandomApp.Controls"
+             x:Class="RandomApp.View.RandomFactPage"
+							BackgroundImage="woodbackground.jpg">
+    <ContentPage.Content>
+		<StackLayout>
+			<Grid ColumnSpacing="6">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+					<RowDefinition Height="Auto"></RowDefinition>
+					<RowDefinition Height="Auto"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+					<RowDefinition Height="Auto"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid Grid.Row="2" ColumnSpacing="5">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"></RowDefinition>
+					</Grid.RowDefinitions>
+					<local:CustomEditor x:Name="RandomFactEdit" Grid.Row="0" Style="{StaticResource DisplayEditor}" Text="{Binding Randomfact.Text}" HeightRequest="200" WidthRequest="200"/>
+				</Grid>
+				<Label Grid.Row="1" Style="{StaticResource LabelTwoHeading}"  Text="Random facts selector..."/>
+				<Button Grid.Row="4" Text="Get Random Fact" Style="{StaticResource ButtonNarrow}" Clicked="OnClicked"/>
+			</Grid>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

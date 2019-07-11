@@ -8,6 +8,7 @@ using Xamarin.Forms;
 
 using RandomApp.Models;
 using RandomApp.Views;
+using RandomApp.ViewModels;
 
 namespace RandomApp
 {
@@ -26,14 +27,14 @@ namespace RandomApp
 		async void OnEnterButtonClicked(object sender, EventArgs e)
 		{
 
-			Person person;
+			AppItemViewModel viewmodel = new AppItemViewModel();
 
-			person = new Person();
-			person.FirstName = Name.Text;
-			person.LastName = Surname.Text;
+			viewmodel.Person.FirstName = Name.Text;
+			viewmodel.Person.LastName = Surname.Text;
+			viewmodel.Person.FullName = Surname.Text + " " + Surname.Text;
 
 			AppItemPage itempage = new AppItemPage();
-			itempage.BindingContext = person;
+			itempage.BindingContext = viewmodel;
 
 			await Navigation.PushAsync(itempage);
 		}

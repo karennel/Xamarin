@@ -62,9 +62,10 @@
 			<Color x:Key="ColorCornflowerBlueDark">#26428B</Color>
 			<Color x:Key="ColorCornflowerBlueLight">#92b4f2</Color>-->
 
-			<Color x:Key="ColorFawn">#E0AC69</Color>
-			<Color x:Key="ColorMellowApricot">#F1C27D</Color>
-			<Color x:Key="ColorNavajoWhite">#FFDBAC</Color> 
+			<Color x:Key="ColorBackgroundLight">#D3CBC0</Color>
+			<Color x:Key="ColorTextLight">#948C7F</Color>
+			<Color x:Key="ColorBackgroundDark">#BCB6AE</Color>
+			<Color x:Key="ColorTextDark">#897f71</Color>
 
 
 			<Color x:Key="ColorOrange">Orange</Color>
@@ -89,20 +90,20 @@
 				<Setter Property="BorderWidth" Value="2"></Setter>
 			</Style>
 
-			<Style x:Key="ButtonSmallBlue" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+			<Style x:Key="ButtonSmall" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}" />
 				<Setter Property="WidthRequest" Value="120"></Setter>
-				<Setter Property="BorderColor" Value="{StaticResource ColorWhite}"></Setter>
-				<Setter Property="BackgroundColor" Value="{StaticResource ColorFawn}" />
+				<Setter Property="BorderColor" Value="{StaticResource ColorBackgroundLight}" />
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
 				<Setter Property="BorderWidth" Value="2"></Setter>
 			</Style>
 
-			<Style x:Key="ButtonNarrowBlue" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
+			<Style x:Key="ButtonNarrow" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
 				<Setter Property="WidthRequest" Value="40"></Setter>
 				<Setter Property="BorderColor" Value="{StaticResource ColorWhite}"></Setter>
-				<Setter Property="BackgroundColor" Value="{StaticResource ColorFawn}" />
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}" />
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
 				<Setter Property="BorderWidth" Value="2"></Setter>
 			</Style>
@@ -112,11 +113,11 @@
 				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="PlaceholderColor" Value="{StaticResource ColorWhite}"></Setter>
-				<Setter Property="BackgroundColor" Value="{StaticResource ColorFawn}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"></Setter>
 				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
 				<Style.Triggers>
 					<Trigger TargetType="Entry" Property="IsFocused" Value="true">
-						<Setter Property="BackgroundColor" Value="{StaticResource ColorNavajoWhite}"/>
+						<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundDark}"/>
 					</Trigger>
 				</Style.Triggers>
 			</Style>
@@ -125,7 +126,7 @@
 				<Setter Property="WidthRequest" Value="50"></Setter>
 				<Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
-				<Setter Property="TextColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorTextLight}"></Setter>
 				<Setter Property="BackgroundColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="Center"></Setter>
 			</Style>
@@ -133,15 +134,16 @@
 			<Style x:Key="LabelHeading" TargetType="Label">
 				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeGigantic}"></Setter>
-				<Setter Property="TextColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
 			</Style>
 
+
 			<Style x:Key="LabelTwoHeading" TargetType="Label">
 				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
-				<Setter Property="TextColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorTextLight}"></Setter>
 				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
 			</Style>
@@ -150,19 +152,29 @@
 				<Setter Property="FontFamily" Value="{StaticResource RobotoMedium}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeSmall}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
-				<Setter Property="PlaceholderColor" Value="{StaticResource ColorMellowApricot}"></Setter>
+				<Setter Property="PlaceholderColor" Value="{StaticResource ColorTextLight}"></Setter>
 				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
 				<Setter Property="IsSpellCheckEnabled" Value="False"></Setter>
-				<Setter Property="BackgroundColor" Value="{StaticResource ColorNavajoWhite}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundDark}"></Setter>
 			</Style>
 
 			<Style x:Key="LabelText" TargetType="Label">
 				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
-				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
-				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
+				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+			</Style>
+
+			<Style x:Key="LabelTextDark" TargetType="Label">
+				<Setter Property="FontFamily" Value="{StaticResource RobotoBold}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorTextDark}"></Setter>
 			</Style>
 		</ResourceDictionary>
 	</Application.Resources>

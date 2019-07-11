@@ -7,35 +7,39 @@
              xmlns:behaviour="clr-namespace:RandomApp.Behaviours"
              mc:Ignorable="d"
              x:Class="RandomApp.MainPage"
-							BackgroundImageSource="background.jpg">
+						 NavigationPage.HasNavigationBar="False"
+						 BackgroundImageSource="background.jpg">
 
 	<ContentView>
 		<StackLayout Margin="10,20,10,30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
 			<Grid VerticalOptions="StartAndExpand" RowSpacing="8">
 				<Grid.RowDefinitions>
+					<RowDefinition Height="100"></RowDefinition>
+					<RowDefinition Height="Auto"></RowDefinition>
 					<RowDefinition Height="Auto"></RowDefinition>
 					<RowDefinition Height="Auto"></RowDefinition>
 					<RowDefinition Height="Auto"></RowDefinition>
 					<RowDefinition Height="*"></RowDefinition>
 				</Grid.RowDefinitions>
-				<local:CustomEntry Grid.Row="0" x:Name="Name" 
+				<Label Grid.Row="1" Style ="{StaticResource LabelHeading}" Text="Random"></Label>
+				<local:CustomEntry Grid.Row="2" x:Name="Name" 
 							Placeholder="Name" 
 							Style="{StaticResource EntryFieldBase}">
 					<Entry.Behaviors>
 						<behaviour:AlphaEntryBehaviour/>
 					</Entry.Behaviors>
 				</local:CustomEntry>
-				<local:CustomEntry Grid.Row="1" x:Name="Surname" 
+				<local:CustomEntry Grid.Row="3" x:Name="Surname" 
 							Placeholder="Surname"
 							Style="{StaticResource EntryFieldBase}">
 					<Entry.Behaviors>
 						<behaviour:AlphaEntryBehaviour/>
 					</Entry.Behaviors>
 				</local:CustomEntry>
-				<Button Grid.Row="2" 
+				<Button Grid.Row="4" 
 							Text="Enter" 
 							HorizontalOptions="Center"
-							Style="{StaticResource ButtonSmallBlue}"
+							Style="{StaticResource ButtonSmall}"
 							Clicked="OnEnterButtonClicked"/>
 			</Grid>
 		</StackLayout>
