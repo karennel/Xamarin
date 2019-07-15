@@ -21,7 +21,8 @@ namespace RandomApp.Views
 		private void OnRandomFactPageClicked(object sender, EventArgs e)
 		{
 			//DisplayAlert("Alert Title", "On Random Fact Page Clicked", "OK");
-			Navigation.PushAsync(new RandomFactPage());
+		//	Navigation.PushAsync(new RandomFactPage());
+			Navigation.PushAsync(new TestEditorPage());
 		}
 	}
 }

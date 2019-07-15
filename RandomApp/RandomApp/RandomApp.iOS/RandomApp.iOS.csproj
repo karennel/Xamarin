@@ -50,7 +50,11 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignProvision />
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -97,13 +101,13 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\icon_180X180.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\background.imageset\background@11.jpg">
+    <ImageAsset Include="Assets.xcassets\background.imageset\background@13.jpg">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\background.imageset\background@21.jpg">
+    <ImageAsset Include="Assets.xcassets\background.imageset\background@23.jpg">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\background.imageset\background@31.jpg">
+    <ImageAsset Include="Assets.xcassets\background.imageset\background@33.jpg">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\background.imageset\Contents.json">
@@ -112,10 +116,16 @@
     <ImageAsset Include="Assets.xcassets\factimage.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\factimage.imageset\factimage.png">
+    <ImageAsset Include="Assets.xcassets\factimage.imageset\factimage1.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\splash.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.imageset\splash1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.old.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -160,13 +170,16 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash.imageset\splash@11.jpg">
+    <ImageAsset Include="Assets.xcassets\splash.old.imageset\splash2.pdf">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash.imageset\splash@21.jpg">
+    <ImageAsset Include="Assets.xcassets\splash.old.imageset\splash@11.jpg">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\splash.imageset\splash@32.jpg">
+    <ImageAsset Include="Assets.xcassets\splash.old.imageset\splash@21.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.old.imageset\splash@31.jpg">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>

@@ -9,6 +9,7 @@
 							BackgroundImage="woodbackground.jpg">
     <ContentPage.Content>
 		<StackLayout>
+			
 			<Grid ColumnSpacing="6">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*"></RowDefinition>
@@ -21,7 +22,8 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="*"></RowDefinition>
 					</Grid.RowDefinitions>
-					<local:CustomEditor x:Name="RandomFactEdit" Grid.Row="0" Style="{StaticResource DisplayEditor}" Text="{Binding Randomfact.Text}" HeightRequest="200" WidthRequest="200"/>
+					<!--<local:CustomEditor x:Name="RandomFactEdit" Grid.Row="0" Style="{StaticResource DisplayEditor}" Text="{Binding Randomfact.Text}" HeightRequest="200" WidthRequest="200"/>-->
+					<!--<local:CustomEditor Placeholder="This is the editor text"></local:CustomEditor>-->
 				</Grid>
 				<Label Grid.Row="1" Style="{StaticResource LabelTwoHeading}"  Text="Random facts selector..."/>
 				<Button Grid.Row="4" Text="Get Random Fact" Style="{StaticResource ButtonNarrow}" Clicked="OnClicked"/>

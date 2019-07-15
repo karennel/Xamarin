@@ -21,7 +21,6 @@
 					<RowDefinition Height="Auto"></RowDefinition>
 					<RowDefinition Height="*"></RowDefinition>
 				</Grid.RowDefinitions>
-				<Label Grid.Row="1" Style ="{StaticResource LabelHeading}" Text="Random"></Label>
 				<local:CustomEntry Grid.Row="2" x:Name="Name" 
 							Placeholder="Name" 
 							Style="{StaticResource EntryFieldBase}">

@@ -13,22 +13,25 @@
 				<RowDefinition Height="Auto"></RowDefinition>
 				<RowDefinition Height="Auto"></RowDefinition>
 			</Grid.RowDefinitions>
-			<Grid Padding="15,15,15,15" Grid.Row="3" >
-				<ListView  x:Name="listView" ItemsSource="{Binding PageItemList}" >
+										<Button Text="Testing"  Clicked="OnRandomFactPageClicked"  Grid.Row="0"></Button>
+			<!--<Grid Padding="15,15,15,15" Grid.Row="3">-->
+
+				<!--<Button Style="{StaticResource ButtonSmall}" Text="RandomFact" Clicked="OnRandomFactPageClicked"></Button>-->
+				<!--<ListView  x:Name="listView" ItemsSource="{Binding PageItemList}" >
 					<ListView.ItemTemplate>
 						<DataTemplate >
 							<ViewCell>
 								<StackLayout>
 									<StackLayout Orientation="Horizontal" >
 										<Label Style="{StaticResource LabelTextDark}" Text="{Binding ItemName}"></Label>
-										<ImageButton Source="{Binding ItemImage}" Clicked="OnRandomFactPageClicked"></ImageButton>
+										--><!--<ImageButton Source="{Binding ItemImage}" Clicked="OnRandomFactPageClicked"></ImageButton>--><!--
 									</StackLayout>
 								</StackLayout>
 							</ViewCell>
 						</DataTemplate>
 					</ListView.ItemTemplate>
-				</ListView>
-			</Grid>
+				</ListView>-->
+			<!--</Grid>-->
 			<Label Style="{StaticResource LabelHeading}" Text="Hi" Grid.Row="1" />
 			<Label Style="{StaticResource LabelHeading}" Text="{Binding Person.FullName}" Grid.Row="2" />
 		</Grid>

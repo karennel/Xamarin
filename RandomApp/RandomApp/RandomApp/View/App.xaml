@@ -62,10 +62,10 @@
 			<Color x:Key="ColorCornflowerBlueDark">#26428B</Color>
 			<Color x:Key="ColorCornflowerBlueLight">#92b4f2</Color>-->
 
-			<Color x:Key="ColorBackgroundLight">#D3CBC0</Color>
+			<Color x:Key="ColorBackgroundLight">#cbcac8</Color>
 			<Color x:Key="ColorTextLight">#948C7F</Color>
-			<Color x:Key="ColorBackgroundDark">#BCB6AE</Color>
-			<Color x:Key="ColorTextDark">#897f71</Color>
+			<Color x:Key="ColorBackgroundDark">#666561</Color>
+			<Color x:Key="ColorTextDark">#8d8b87</Color>
 
 
 			<Color x:Key="ColorOrange">Orange</Color>
