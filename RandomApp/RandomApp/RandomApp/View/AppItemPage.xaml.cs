@@ -22,7 +22,15 @@ namespace RandomApp.Views
 		{
 			//DisplayAlert("Alert Title", "On Random Fact Page Clicked", "OK");
 		//	Navigation.PushAsync(new RandomFactPage());
+			try 
+{
+
 			Navigation.PushAsync(new TestEditorPage());
+			}
+catch (Exception ex)
+{
+				DisplayAlert("Exception alert", ex.Message, "OK");
+			}
 		}
 	}
 }

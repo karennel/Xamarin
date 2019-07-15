@@ -55,6 +55,8 @@ namespace RandomApp.iOS.Renderers
 
 		void CreatePlaceholderLabel()
 		{
+			try {
+
 			_placeholderLabel = new UILabel
 			{
 				BackgroundColor = UIColor.Clear,
@@ -79,6 +81,11 @@ namespace RandomApp.iOS.Renderers
 			Control.LayoutIfNeeded();
 
 			_placeholderLabel.Hidden = Control.HasText;
+			}
+			catch (Exception ex)
+{
+				var message = ex.Message;
+			}
 		}
 
 		void UpdatePlaceholder()

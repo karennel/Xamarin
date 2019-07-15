@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RandomApp.Model;
 
-namespace ThisApp.ViewModel
+namespace RandomApp.ViewModel
 {
 	public class RandomFactViewModel : INotifyPropertyChanged
 	{

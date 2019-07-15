@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using ThisApp.ViewModel;
+using RandomApp.ViewModel;
 
 namespace RandomApp.View
 {

@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+
 namespace RandomApp.Controls
 {
 	public class CustomEditor : Editor

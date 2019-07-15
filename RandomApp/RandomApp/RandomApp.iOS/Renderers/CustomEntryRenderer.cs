@@ -19,6 +19,12 @@ namespace RandomApp.iOS.Renderers
 		{
 			base.OnElementChanged(e);
 
+			//if (Control != null)
+			//{
+			//	Control.BackgroundColor = UIColor.FromRGB(204, 153, 255);
+			//	Control.BorderStyle = UITextBorderStyle.Line;
+			//}
+
 			if (e.OldElement != null)
 			{
 				// Unsubscribe from event handlers and cleanup any resources
@@ -26,6 +32,8 @@ namespace RandomApp.iOS.Renderers
 
 				if (KeyboardToolbar != null)
 					KeyboardToolbar.OnResetKeyboard -= Element_OnResetKeyboard;
+
+				//Control.BackgroundColor = UIColor.FromRGB(13, 13, 13);
 			}
 
 			if (e.NewElement != null)
@@ -37,6 +45,9 @@ namespace RandomApp.iOS.Renderers
 
 				if (KeyboardToolbar != null)
 					KeyboardToolbar.OnResetKeyboard += Element_OnResetKeyboard;
+
+				//ontrol.BackgroundColor = UIColor.FromRGB(100, 100, 100);
+
 			}
 		}
 
