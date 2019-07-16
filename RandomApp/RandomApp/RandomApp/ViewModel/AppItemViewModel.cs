@@ -14,11 +14,11 @@ namespace RandomApp.ViewModels
 		public List<PageItem> PageItemList { get; set; }
 		private Person person = new Person();
 
-
 		public AppItemViewModel()
 		{
 			PageItemService pageitemserivce = new PageItemService();
 			PageItemList = pageitemserivce.CreatePageItemList();
+			Person = person;
 		}
 
 		public Person Person
@@ -34,7 +34,6 @@ namespace RandomApp.ViewModels
 		}
 
 		public PageItem PageItem;
-
 		private PageItem pageitem
 		{
 			get { return pageitem; }
@@ -58,40 +57,3 @@ namespace RandomApp.ViewModels
 	}
 }
 
-
-
-
-//	private string name;
-//	public string Name
-//{
-//		get { return name; }
-
-//		set {
-//			name = value;
-//			NotifyPropertyChanged();
-//		}
-//	}
-
-//	private string surname;
-//	public string Surname
-//	{
-//		get { return surname; }
-
-//		set
-//		{
-//			surname = value;
-//			NotifyPropertyChanged();
-//		}
-//	}
-
-//	private string fullname;
-//	public string FullName
-//	{
-//		get { return name + " " + surname;  }
-
-//		set
-//		{
-//			fullname = name + " " + surname;
-//			NotifyPropertyChanged();
-//		}
-//	}

@@ -6,26 +6,26 @@
              mc:Ignorable="d"
 						 xmlns:local="clr-namespace:RandomApp.Controls"
              x:Class="RandomApp.View.RandomFactPage"
-							BackgroundImage="woodbackground.jpg">
+							NavigationPage.HasNavigationBar="False"
+						 BackgroundImageSource="background.jpg">
     <ContentPage.Content>
 		<StackLayout>
 			
-			<Grid ColumnSpacing="6">
+			<Grid Padding="20, 60, 60, 20">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*"></RowDefinition>
 					<RowDefinition Height="Auto"></RowDefinition>
-					<RowDefinition Height="Auto"></RowDefinition>
+					<RowDefinition Height="200"></RowDefinition>
 					<RowDefinition Height="*"></RowDefinition>
 					<RowDefinition Height="Auto"></RowDefinition>
 				</Grid.RowDefinitions>
-				<Grid Grid.Row="2" ColumnSpacing="5">
+				<Grid Grid.Row="2">
 					<Grid.RowDefinitions>
-						<RowDefinition Height="*"></RowDefinition>
+						<RowDefinition Height="Auto"></RowDefinition>
 					</Grid.RowDefinitions>
-					<!--<local:CustomEditor x:Name="RandomFactEdit" Grid.Row="0" Style="{StaticResource DisplayEditor}" Text="{Binding Randomfact.Text}" HeightRequest="200" WidthRequest="200"/>-->
-					<!--<local:CustomEditor Placeholder="This is the editor text"></local:CustomEditor>-->
+					<!--<local:CustomEditor x:Name="FactEditor" Grid.Row="0" Style="{StaticResource CustomEditorDefault}" Text="{Binding Randomfact.Text}"></local:CustomEditor>-->
 				</Grid>
-				<Label Grid.Row="1" Style="{StaticResource LabelTwoHeading}"  Text="Random facts selector..."/>
+				<Label Grid.Row="1" Style="{StaticResource LabelHeadingTwo}"  Text="Random facts selector..."/>
 				<Button Grid.Row="4" Text="Get Random Fact" Style="{StaticResource ButtonNarrow}" Clicked="OnClicked"/>
 			</Grid>
 		</StackLayout>

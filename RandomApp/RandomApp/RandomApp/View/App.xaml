@@ -47,7 +47,7 @@
 			<x:Double x:Key="FontSize11">11</x:Double>
 			<x:Double x:Key="FontSizeMicro">12</x:Double>
 			<x:Double x:Key="FontSizeSmall">14</x:Double>
-			<x:Double x:Key="FontSizeMedium">16</x:Double>
+			<x:Double x:Key="FontSizeMedium">17</x:Double>
 			<x:Double x:Key="FontSize18">18</x:Double>
 			<x:Double x:Key="FontSize22">22</x:Double>
 			<x:Double x:Key="FontSizeLarge">30</x:Double>
@@ -56,6 +56,10 @@
 			<!--Platform specific-->
 			<OnPlatform x:Key="ButtonHeight" x:TypeArguments="x:Double" Android="50.0" iOS="40.0" />
 			<OnPlatform x:Key="ButtonBorderRadius" x:TypeArguments="x:Int32" Android="50" iOS="22" />
+			<OnPlatform x:Key="EntryHeight" x:TypeArguments="x:Double" Android="45.0" iOS="55.0" />
+			<OnPlatform x:Key="LabelDarkHeight" x:TypeArguments="x:Double" Android="45.0" iOS="55.0" />
+			<OnPlatform x:Key="ImageButtonWidth" x:TypeArguments="x:Double" Android="60.0"  iOS="80" />
+			<OnPlatform x:Key="ListViewLabelWidth" x:TypeArguments="x:Double" Android="400"  iOS="600" />
 
 			<!--Colors-->
 			<Color x:Key="ColorDarkGrey">#2C3E50</Color>
@@ -67,11 +71,12 @@
 			<Color x:Key="ColorTextLight">#948C7F</Color>
 			<Color x:Key="ColorBackgroundDark">#666561</Color>
 			<Color x:Key="ColorTextDark">#8d8b87</Color>
+			<Color x:Key="ColorBlack">Black</Color>
+			<Color x:Key="ColorWhite">White</Color>
 
 
 			<Color x:Key="ColorOrange">Orange</Color>
 			<Color x:Key="ColorPink">Pink</Color>
-			<Color x:Key="ColorWhite">White</Color>
 			<Color x:Key="ColorAcceptButton">#274659</Color>
 			<Color x:Key="ColorGray2">#A6A8AA</Color>
 
@@ -91,6 +96,29 @@
 				<Setter Property="BorderWidth" Value="2"></Setter>
 			</Style>
 
+			<Style x:Key="ImageButtonBase" TargetType="ImageButton">
+				<Setter Property="WidthRequest" Value="{StaticResource ImageButtonWidth}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
+				<Setter Property="BorderColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
+				<Setter Property="BorderWidth" Value="2"></Setter>
+			</Style>
+
+			<Style x:Key="ListViewBase" TargetType="ListView">
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
+				<Setter Property="SeparatorVisibility" Value="None"></Setter>
+			</Style>
+
+
+			<Style x:Key="ListViewLabelBase" TargetType="Label">
+				<Setter Property="HorizontalTextAlignment" Value="Start"></Setter>
+				<Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+				<Setter Property="WidthRequest" Value="{StaticResource ListViewLabelWidth}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+			</Style>
+
+		
 			<Style x:Key="ButtonSmall" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
 				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}" />
@@ -113,6 +141,7 @@
 				<Setter Property="FontFamily" Value="{StaticResource FontMedium}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="HeightRequest" Value="{StaticResource EntryHeight}"></Setter>
 				<Setter Property="PlaceholderColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"></Setter>
 				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
@@ -138,15 +167,16 @@
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
 			</Style>
 
-
-			<Style x:Key="LabelTwoHeading" TargetType="Label">
+			<Style x:Key="LabelHeadingTwo" TargetType="Label">
 				<Setter Property="FontFamily" Value="{StaticResource FontBold}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
-				<Setter Property="TextColor" Value="{StaticResource ColorTextLight}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="StartAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
 			</Style>
 
 			<Style x:Key="DisplayEditor" TargetType="Editor">
@@ -171,29 +201,20 @@
 
 			<Style x:Key="LabelTextDark" TargetType="Label">
 				<Setter Property="FontFamily" Value="{StaticResource FontBold}"></Setter>
+				<Setter Property="LineHeight" Value="{StaticResource LabelDarkHeight}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorTextDark}"></Setter>
-				
 			</Style>
 
 			<Style x:Key="CustomEditorDefault" TargetType="controls:CustomEditor">
 				<Setter Property="FontFamily" Value="{StaticResource FontBlack}"></Setter>
-				<!--<Setter Property="FontFamily" Value="Fonts/Montserrat-SemiBold"></Setter>-->
-				<Setter Property="TextColor" Value="{StaticResource ColorPink}"></Setter>
-				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorTextDark}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSize18}"></Setter>
 			</Style>
-
-			<Style x:Key="CustomEditorBold" TargetType="controls:CustomEditor">
-				<Setter Property="FontFamily" Value="{StaticResource FontBlackItalic}"></Setter>
-				<!--<Setter Property="FontFamily" Value="Fonts/Montserrat-SemiBold"></Setter>-->
-				<Setter Property="TextColor" Value="{StaticResource ColorBackgroundDark}"></Setter>
-				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
-			</Style>
-
-
 
 		</ResourceDictionary>
 	</Application.Resources>

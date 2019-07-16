@@ -34,8 +34,6 @@
 	<string>RandomApp</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
-	<key>UIMainStoryboardFile</key>
-	<string>LaunchScreen</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/Roboto-Black.ttf</string>
@@ -50,5 +48,7 @@
 		<string>Fonts/Roboto-Thin.ttf</string>
 		<string>Fonts/Roboto-ThinItalic.ttf</string>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>

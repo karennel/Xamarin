@@ -16,11 +16,11 @@ namespace RandomApp.Services
 			pageitem.ItemName = "ItemName";
 			pageitem.ItemImage = "ItemImage";
 
-			pageItemList.Add(new PageItem { ItemImage = "factimage", ItemName = "Random Fact" });
-			pageItemList.Add(new PageItem { ItemImage = "ItemImage2", ItemName = "ItemName2" });
-			pageItemList.Add(new PageItem { ItemImage = "ItemImage3", ItemName = "ItemName3" });
-			pageItemList.Add(new PageItem { ItemImage = "ItemImage4", ItemName = "ItemName4" });
-			pageItemList.Add(new PageItem { ItemImage = "ItemImage5", ItemName = "ItemName5" });
+			pageItemList.Add(new PageItem { ItemImage = "factimage", ItemName = "Display Random Facts" });
+			pageItemList.Add(new PageItem { ItemImage = "button", ItemName = "number2" });
+			pageItemList.Add(new PageItem { ItemImage = "button", ItemName = "number2" });
+			pageItemList.Add(new PageItem { ItemImage = "button", ItemName = "number2" });
+			pageItemList.Add(new PageItem { ItemImage = "button", ItemName = "number2" });
 
 			return pageItemList;
 		}

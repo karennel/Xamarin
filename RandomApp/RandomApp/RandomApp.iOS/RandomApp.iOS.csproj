@@ -82,7 +82,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\Fonts\Roboto-Black.ttf" />
     <BundleResource Include="Resources\Fonts\Roboto-BlackItalic.ttf" />
     <BundleResource Include="Resources\Fonts\Roboto-Bold.ttf" />
@@ -95,6 +94,7 @@
     <BundleResource Include="Resources\Fonts\Roboto-Regular.ttf" />
     <BundleResource Include="Resources\Fonts\Roboto-Thin.ttf" />
     <BundleResource Include="Resources\Fonts\Roboto-ThinItalic.ttf" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json">
@@ -127,19 +127,43 @@
     <ImageAsset Include="Assets.xcassets\background.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\button.imageset\button.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\button.imageset\button1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\button.imageset\button2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\factimage.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\factimage.imageset\factimage1.png">
+    <ImageAsset Include="Assets.xcassets\button.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImages.launchimage\Contents.json">
+    <ImageAsset Include="Assets.xcassets\factimage.imageset\factimage11.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\factimage.imageset\factimage2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\factimage.imageset\factimage21.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\splash.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImages.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\splash.imageset\splash1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.old2.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\splash.old2.imageset\splash1.pdf">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\splash.old.imageset\Contents.json">

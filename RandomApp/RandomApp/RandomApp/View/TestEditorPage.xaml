@@ -18,7 +18,7 @@ PlaceholderColor="Red"
 			<!--<local:CustomEntry Placeholder="This is the editor text from the custom entry"></local:CustomEntry>-->
 
 			<local:CustomEditor
-Style="{StaticResource CustomEditorBold}"
+Style="{StaticResource CustomEditorDefault}"
                 Placeholder="This is the placeholder - editor text"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"

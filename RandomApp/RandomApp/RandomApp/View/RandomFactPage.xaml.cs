@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using RandomApp.ViewModel;
+using RandomApp.Controls;
 
 namespace RandomApp.View
 {
@@ -16,6 +17,8 @@ namespace RandomApp.View
 		{
 			vm = new RandomFactViewModel();
 			BindingContext = vm;
+			CustomEditor editor = new CustomEditor();
+			editor.IsVisible = true;
 			InitializeComponent();
 		}
 
