@@ -6,9 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-using RandomApp.Models;
-using RandomApp.Views;
-using RandomApp.ViewModels;
+using RandomApp.View;
+using RandomApp.ViewModel;
 
 namespace RandomApp
 {

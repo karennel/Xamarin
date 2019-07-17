@@ -3,10 +3,9 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 
 using RandomApp.Model;
-using RandomApp.Models;
 using RandomApp.Services;
 
-namespace RandomApp.ViewModels
+namespace RandomApp.ViewModel
 {
 	public class AppItemViewModel : INotifyPropertyChanged
 	{

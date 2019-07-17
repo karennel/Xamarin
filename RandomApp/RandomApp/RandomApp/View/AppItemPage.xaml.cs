@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace RandomApp.Views
+namespace RandomApp.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AppItemPage : ContentPage

@@ -1,5 +1,5 @@
 ﻿
-namespace RandomApp.Models
+namespace RandomApp.Model
 {
 	public class Person
 	{
