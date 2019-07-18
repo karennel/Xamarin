@@ -21,8 +21,6 @@ namespace RandomApp
 			InitializeComponent();
 		}
 
-
-
 		async void OnEnterButtonClicked(object sender, EventArgs e)
 		{
 

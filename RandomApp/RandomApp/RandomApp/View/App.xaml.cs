@@ -1,4 +1,6 @@
-﻿using RandomApp.View;
+﻿using RandomApp.Model;
+using RandomApp.View;
+using RandomApp.ViewModel;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,8 +14,13 @@ namespace RandomApp
 			InitializeComponent();
 			//MainPage = new MainPage();
 			//MainPage = new NavigationPage(new TestView());
+
+			MainPageViewModel mainpagevm = new MainPageViewModel();
+			//mainpagevm.Person = new Person();
 			MainPage = new NavigationPage(new MainPage());
-			//MainPage = new NavigationPage(new TestButtonPage());
+
+			//TestCommandView testcommandview = new TestCommandView();
+			//MainPage = new NavigationPage(new TestCommandView());
 		}
 
 		protected override void OnStart()
