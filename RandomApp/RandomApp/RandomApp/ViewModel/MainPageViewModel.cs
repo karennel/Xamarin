@@ -15,14 +15,24 @@ namespace RandomApp.ViewModel
 		public string FirstName
 		{
 			get => firstname;
-			set => SetObservableProperty(firstname, value, () => firstname = value);
+			set
+			{
+				SetObservableProperty(firstname, value, () => firstname = value);
+				if (IsEnterEnabled())
+					(EnterCommand as Command).ChangeCanExecute();
+			}
 		}
 
 		private string surname;
 		public string Surname
 		{
 			get => surname;
-			set => SetObservableProperty(surname, value, () => surname = value);
+			set
+			{
+				SetObservableProperty(surname, value, () => surname = value);
+				if (IsEnterEnabled())
+					(EnterCommand as Command).ChangeCanExecute();
+			}
 		}
 
 		private string fullname;
@@ -32,7 +42,7 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
 		}
 
-		bool IsEnterEnabled(string firstname, string surname) { return (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true); }
+		bool IsEnterEnabled() { bool ret =  (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true); return ret; }
 
 		ICommand enterCommand;
 		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterAction);
