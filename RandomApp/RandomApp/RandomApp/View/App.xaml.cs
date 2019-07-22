@@ -1,4 +1,5 @@
 ﻿using RandomApp.Model;
+using RandomApp.Services;
 using RandomApp.View;
 using RandomApp.ViewModel;
 using System;
@@ -15,13 +16,24 @@ namespace RandomApp
 			//MainPage = new MainPage();
 			//MainPage = new NavigationPage(new TestView());
 
-			MainPageViewModel mainpagevm = new MainPageViewModel();
+
 			//mainpagevm.Person = new Person();
-			MainPage = new NavigationPage(new MainPage());
+			//MainPage = new NavigationPage(new MainPage());
 
 			//TestCommandView testcommandview = new TestCommandView();
 			//MainPage = new NavigationPage(new TestCommandView());
+
+			viewNavigationService.Configure("MainPage", typeof(MainPage));
+
+			MainPageViewModel mainpagevm = new MainPageViewModel();
+			mainpagevm.navigationservice = viewNavigationService; 
+			var mainPage = ((Services.NavigationService)viewNavigationService).SetRootPage("MainPage");
+
+			MainPage = mainPage;
+			MainPage.BindingContext = mainpagevm;
 		}
+
+		public static NavigationService viewNavigationService { get; } = new Services.NavigationService();
 
 		protected override void OnStart()
 		{

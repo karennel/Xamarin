@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace RandomApp.ViewModel
 {
-	public class TestCommandViewModel : INotifyPropertyChanged
+	public class TestCommandViewModel : ViewModel
 	{
 		private bool submitbuttonenabled;
 		public bool SubmitButtonEnabled

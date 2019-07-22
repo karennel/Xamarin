@@ -10,7 +10,7 @@ using RandomApp.Model;
 
 namespace RandomApp.ViewModel
 {
-	public class RandomFactViewModel : INotifyPropertyChanged
+	public class RandomFactViewModel : ViewModel
 	{
 
 		public event PropertyChangedEventHandler PropertyChanged;

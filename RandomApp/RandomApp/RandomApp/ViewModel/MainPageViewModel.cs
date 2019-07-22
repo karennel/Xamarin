@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
+using RandomApp.Services;
+using RandomApp.View;
 
 namespace RandomApp.ViewModel
 {
@@ -30,14 +32,15 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
 		}
 
-		//Func<bool> isactive = (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true;
+		bool IsEnterEnabled(string firstname, string surname) { return (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true); }
 
 		ICommand enterCommand;
 		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterAction);
 
-		void EnterAction()
+		async void EnterAction()
 		{
-			var thevalue = "stop";
+		
+			//await viewNavigationService.NavigateAsync(nameof(RandomFactPage), "root page misses you"); ;
 		}
 	}
 }

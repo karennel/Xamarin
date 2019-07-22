@@ -7,7 +7,7 @@ using RandomApp.Services;
 
 namespace RandomApp.ViewModel
 {
-	public class AppItemViewModel : INotifyPropertyChanged
+	public class AppItemViewModel : ViewModel
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 		public List<PageItem> PageItemList { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandomApp.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -9,6 +10,8 @@ namespace RandomApp.ViewModel
 {
 	public abstract class ViewModel : IViewModel
 	{
+
+		public NavigationService navigationservice = null;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

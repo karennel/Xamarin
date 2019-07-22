@@ -20,20 +20,5 @@ namespace RandomApp
 		{
 			InitializeComponent();
 		}
-
-		async void OnEnterButtonClicked(object sender, EventArgs e)
-		{
-
-			AppItemViewModel viewmodel = new AppItemViewModel();
-
-			viewmodel.Person.FirstName = Name.Text;
-			viewmodel.Person.LastName = Surname.Text;
-			viewmodel.Person.FullName = Surname.Text + " " + Surname.Text;
-
-			AppItemPage itempage = new AppItemPage();
-			itempage.BindingContext = viewmodel;
-
-			await Navigation.PushAsync(itempage);
-		}
 	}
 }
