@@ -13,27 +13,20 @@ namespace RandomApp
 		public App()
 		{
 			InitializeComponent();
-			//MainPage = new MainPage();
-			//MainPage = new NavigationPage(new TestView());
+
+			navigationService.Configure("MainPage", typeof(MainPage));
+			navigationService.Configure("RandomFactPage", typeof(RandomFactPage));
 
 
-			//mainpagevm.Person = new Person();
-			//MainPage = new NavigationPage(new MainPage());
+			MainPageViewModel mainpagevm = new MainPageViewModel(navigationService);
+			var mainPage = ((Services.NavigationService)navigationService).SetRootPage("MainPage");
+			mainPage.BindingContext = mainpagevm; 
 
-			//TestCommandView testcommandview = new TestCommandView();
-			//MainPage = new NavigationPage(new TestCommandView());
-
-			viewNavigationService.Configure("MainPage", typeof(MainPage));
-
-			MainPageViewModel mainpagevm = new MainPageViewModel();
-			mainpagevm.navigationservice = viewNavigationService; 
-			var mainPage = ((Services.NavigationService)viewNavigationService).SetRootPage("MainPage");
 
 			MainPage = mainPage;
-			MainPage.BindingContext = mainpagevm;
 		}
 
-		public static NavigationService viewNavigationService { get; } = new Services.NavigationService();
+		public static NavigationService navigationService { get; } = new Services.NavigationService();
 
 		protected override void OnStart()
 		{

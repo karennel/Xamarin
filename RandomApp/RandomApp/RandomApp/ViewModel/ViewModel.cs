@@ -9,7 +9,7 @@ namespace RandomApp.ViewModel
 	public abstract class ViewModel : IViewModel
 	{
 
-		public NavigationService navigationservice = null;
+		public NavigationService _navigationService = null;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

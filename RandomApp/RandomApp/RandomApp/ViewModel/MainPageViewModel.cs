@@ -18,7 +18,7 @@ namespace RandomApp.ViewModel
 			set
 			{
 				SetObservableProperty(firstname, value, () => firstname = value);
-				if (IsEnterEnabled())
+				if (IsSubmitActive())
 					(EnterCommand as Command).ChangeCanExecute();
 			}
 		}
@@ -30,7 +30,7 @@ namespace RandomApp.ViewModel
 			set
 			{
 				SetObservableProperty(surname, value, () => surname = value);
-				if (IsEnterEnabled())
+				if (IsSubmitActive())
 					(EnterCommand as Command).ChangeCanExecute();
 			}
 		}
@@ -42,15 +42,20 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
 		}
 
-		bool IsEnterEnabled() { bool ret =  (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true); return ret; }
+		public MainPageViewModel(NavigationService navigationService)
+		{
+			_navigationService = navigationService;
+		}
+			
+
+		bool IsSubmitActive() { return (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true); } 
 
 		ICommand enterCommand;
-		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterAction);
+		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterCommandExecute, () => (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true));
 
-		async void EnterAction()
+		async void EnterCommandExecute()
 		{
-		
-			//await viewNavigationService.NavigateAsync(nameof(RandomFactPage), "root page misses you"); ;
+			await _navigationService.NavigateAsync(nameof(RandomFactPage), null); ;
 		}
 	}
 }
