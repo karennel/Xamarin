@@ -13,18 +13,9 @@ namespace RandomApp.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AppItemPage : ContentPage
 	{
-		public AppItemPage()
+		public AppItemPage(string FullName)
 		{
 			InitializeComponent();
-		}
-
-		private void OnRandomFactPageClicked(object sender, EventArgs e)
-		{
-			//DisplayAlert("Alert Title", "On Random Fact Page Clicked", "OK");
-			RandomFactPage randomfactpage = new RandomFactPage();
-			Navigation.PushAsync(randomfactpage);
-
-		//	Navigation.PushAsync(new TestEditorPage());
 		}
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RandomApp.Services
+namespace RandomApp
 {
 	public interface INavigationService
 	{
@@ -11,8 +11,6 @@ namespace RandomApp.Services
 
 		void Configure(string pageKey, Type pageType);
 		Task GoBack();
-		Task NavigateModalAsync(string pageKey, bool animated = true);
-		Task NavigateModalAsync(string pageKey, object parameter, bool animated = true);
 		Task NavigateAsync(string pageKey, bool animated = true);
 		Task NavigateAsync(string pageKey, object parameter, bool animated = true);
 	}

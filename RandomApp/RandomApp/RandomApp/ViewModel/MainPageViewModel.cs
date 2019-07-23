@@ -1,13 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 using RandomApp.Services;
 using RandomApp.View;
 
 namespace RandomApp.ViewModel
-{
+{ 
 	public class MainPageViewModel : ViewModel
 	{
 
@@ -18,6 +15,7 @@ namespace RandomApp.ViewModel
 			set
 			{
 				SetObservableProperty(firstname, value, () => firstname = value);
+				FullName = FirstName + " " + Surname;
 				if (IsSubmitActive())
 					(EnterCommand as Command).ChangeCanExecute();
 			}
@@ -30,6 +28,7 @@ namespace RandomApp.ViewModel
 			set
 			{
 				SetObservableProperty(surname, value, () => surname = value);
+				FullName = FirstName + " " + Surname;
 				if (IsSubmitActive())
 					(EnterCommand as Command).ChangeCanExecute();
 			}
@@ -42,20 +41,24 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
 		}
 
+		public MainPageViewModel()
+		{
+		}
+
 		public MainPageViewModel(NavigationService navigationService)
 		{
 			_navigationService = navigationService;
 		}
-			
 
-		bool IsSubmitActive() { return (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true); } 
+		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); } 
 
 		ICommand enterCommand;
-		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterCommandExecute, () => (((string.IsNullOrEmpty(FirstName)) || (string.IsNullOrEmpty(Surname))) ? false : true));
+		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterCommandExecute, () => IsSubmitActive());
 
 		async void EnterCommandExecute()
 		{
-			await _navigationService.NavigateAsync(nameof(RandomFactPage), null); ;
+			AppItemViewModel appitemvm = new AppItemViewModel(_navigationService);
+			await _navigationService.NavigateAsync(nameof(AppItemPage));
 		}
 	}
 }

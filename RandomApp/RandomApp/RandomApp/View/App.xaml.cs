@@ -15,18 +15,16 @@ namespace RandomApp
 			InitializeComponent();
 
 			navigationService.Configure("MainPage", typeof(MainPage));
+			navigationService.Configure("AppItemPage", typeof(AppItemPage));
 			navigationService.Configure("RandomFactPage", typeof(RandomFactPage));
 
-
 			MainPageViewModel mainpagevm = new MainPageViewModel(navigationService);
-			var mainPage = ((Services.NavigationService)navigationService).SetRootPage("MainPage");
+			var mainPage = ((NavigationService)navigationService).SetRootPage("MainPage");
 			mainPage.BindingContext = mainpagevm; 
-
-
 			MainPage = mainPage;
 		}
 
-		public static NavigationService navigationService { get; } = new Services.NavigationService();
+		public static NavigationService navigationService { get; } = new NavigationService();
 
 		protected override void OnStart()
 		{

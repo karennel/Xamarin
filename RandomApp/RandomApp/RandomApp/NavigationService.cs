@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace RandomApp.Services
+namespace RandomApp
 {
 	public class NavigationService : INavigationService
 	{
@@ -77,21 +77,7 @@ namespace RandomApp.Services
 
 			await CurrentNavigationPage.PopAsync();
 		}
-
-		public async Task NavigateModalAsync(string pageKey, bool animated = true)
-		{
-			await NavigateModalAsync(pageKey, null, animated);
-		}
-
-		public async Task NavigateModalAsync(string pageKey, object parameter, bool animated = true)
-		{
-			var page = GetPage(pageKey, parameter);
-			NavigationPage.SetHasNavigationBar(page, false);
-			var modalNavigationPage = new NavigationPage(page);
-			await CurrentNavigationPage.Navigation.PushModalAsync(modalNavigationPage, animated);
-			_navigationPageStack.Push(modalNavigationPage);
-		}
-
+	
 		public async Task NavigateAsync(string pageKey, bool animated = true)
 		{
 			await NavigateAsync(pageKey, null, animated);
@@ -153,6 +139,7 @@ namespace RandomApp.Services
 				}
 
 				var page = constructor.Invoke(parameters) as Page;
+			
 				return page;
 			}
 		}

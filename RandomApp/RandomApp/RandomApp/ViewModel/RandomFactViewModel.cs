@@ -7,21 +7,17 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using RandomApp.Model;
+using RandomApp.Services;
 
 namespace RandomApp.ViewModel
 {
 	public class RandomFactViewModel : ViewModel
 	{
 
-		public event PropertyChangedEventHandler PropertyChanged;
-
 		private RandomFact randomfact;
 		public RandomFact Randomfact
 		{
-			get
-			{
-				return randomfact;
-			}
+			get => randomfact;
 			set
 			{
 				randomfact.Text = value.Text;
@@ -29,15 +25,19 @@ namespace RandomApp.ViewModel
 				randomfact.SourceURL = value.SourceURL;
 				randomfact.Language = value.Language;
 				randomfact.Source = value.Source;
-
-				NotifyPropertyChanged();
 			}
+		}
+
+
+		public RandomFactViewModel() { }
+
+		public RandomFactViewModel(NavigationService navigationservice)
+		{
+			_navigationService = navigationservice;
 		}
 
 		public async Task GetRandomFactAsync(string url)
 		{
-
-			
 
 			try
 			{
@@ -61,15 +61,6 @@ namespace RandomApp.ViewModel
 				randomfact.Source = "not found";
 				randomfact.Text = "Unable to get any random facts at the moment." + "/\n" + "Sorry!!!!";
 				Randomfact = randomfact;	
-			}
-		}
-
-
-		private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-		{
-			if (PropertyChanged != null)
-			{
-				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

@@ -8,5 +8,6 @@ namespace RandomApp.Model
 	{
 		public string ItemName { get; set; }
 		public string ItemImage { get; set; }
+		public string ItemCommand { get; set; }
 	}
 }

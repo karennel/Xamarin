@@ -1,57 +1,36 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Collections.Generic;
-
-using RandomApp.Model;
+﻿using System.Windows.Input;
+using Xamarin.Forms;
 using RandomApp.Services;
+using RandomApp.View;
 
 namespace RandomApp.ViewModel
 {
 	public class AppItemViewModel : ViewModel
 	{
-		public event PropertyChangedEventHandler PropertyChanged;
-		public List<PageItem> PageItemList { get; set; }
-		private Person person = new Person();
+
+		private string fullname;
+		public string FullName
+		{
+			get => fullname;
+			set => SetObservableProperty(fullname, value, () => fullname = value);
+		}
 
 		public AppItemViewModel()
 		{
-			PageItemService pageitemserivce = new PageItemService();
-			PageItemList = pageitemserivce.CreatePageItemList();
-			Person = person;
 		}
 
-		public Person Person
+		public AppItemViewModel(NavigationService navigationservice)
 		{
-			get { return person; }
-			set
-			{
-				person.FirstName = value.FirstName;
-				person.LastName = value.LastName;
-				person.FullName = person.FirstName + " " + person.LastName;
-				NotifyPropertyChanged();
-			}
+			_navigationService = navigationservice;
 		}
 
-		public PageItem PageItem;
-		private PageItem pageitem
+		ICommand randomfactCommand;
+		public ICommand RandomFactCommand => randomfactCommand = randomfactCommand ?? XFHelper.CreateCommand(RandomFactCommandExecute);
+
+		async void RandomFactCommandExecute()
 		{
-			get { return pageitem; }
-
-			set
-			{
-				pageitem.ItemName = value.ItemName;
-				pageitem.ItemImage = value.ItemImage;
-
-				NotifyPropertyChanged();
-			}
-		}
-
-		private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-		{
-			if (PropertyChanged != null)
-			{
-				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			RandomFactViewModel appitemvm = new RandomFactViewModel(_navigationService);
+			await _navigationService.NavigateAsync(nameof(RandomFactPage)); ;
 		}
 	}
 }

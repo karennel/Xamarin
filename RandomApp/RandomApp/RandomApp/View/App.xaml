@@ -83,9 +83,15 @@
 			<!--Button styles-->
 			<Style x:Key="ButtonBase" TargetType="Button">
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
-				<Setter Property="FontFamily" Value="{StaticResource FontRegular}" />
+				<Setter Property="FontFamily" Value="{StaticResource FontLight}" />
 				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
 				<Setter Property="HeightRequest" Value="{StaticResource ButtonHeight}" />
+				<Style.Triggers>
+					<Trigger TargetType="Button" Property="IsEnabled" Value="true">
+						<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"/>
+						<Setter Property="FontFamily" Value="{StaticResource FontBold}"/>
+					</Trigger>
+				</Style.Triggers>
 			</Style>
 
 			<Style x:Key="ButtonTransparent" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
@@ -102,13 +108,13 @@
 				<Setter Property="BorderColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
 				<Setter Property="BorderWidth" Value="2"></Setter>
+				
 			</Style>
 
 			<Style x:Key="ListViewBase" TargetType="ListView">
 				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
 				<Setter Property="SeparatorVisibility" Value="None"></Setter>
 			</Style>
-
 
 			<Style x:Key="ListViewLabelBase" TargetType="Label">
 				<Setter Property="HorizontalTextAlignment" Value="Start"></Setter>
@@ -117,7 +123,6 @@
 				<Setter Property="BackgroundColor" Value="{StaticResource ColorBlack}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 			</Style>
-
 		
 			<Style x:Key="ButtonSmall" TargetType="Button" BasedOn="{StaticResource ButtonBase}">
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
@@ -140,10 +145,10 @@
 			<Style x:Key="EntryFieldBase" TargetType="Entry">
 				<Setter Property="FontFamily" Value="{StaticResource FontMedium}"></Setter>
 				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
-				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
+				<Setter Property="TextColor" Value="{StaticResource ColorBlack}"></Setter>
 				<Setter Property="HeightRequest" Value="{StaticResource EntryHeight}"></Setter>
-				<Setter Property="PlaceholderColor" Value="{StaticResource ColorWhite}"></Setter>
-				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"></Setter>
+				<Setter Property="PlaceholderColor" Value="{StaticResource ColorTextLight}"></Setter>
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
 				<Style.Triggers>
 					<Trigger TargetType="Entry" Property="IsFocused" Value="true">
@@ -192,7 +197,7 @@
 
 			<Style x:Key="LabelText" TargetType="Label">
 				<Setter Property="FontFamily" Value="{StaticResource FontBold}"></Setter>
-				<Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"></Setter>
+				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"></Setter>
 				<Setter Property="TextColor" Value="{StaticResource ColorWhite}"></Setter>
 				<Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
