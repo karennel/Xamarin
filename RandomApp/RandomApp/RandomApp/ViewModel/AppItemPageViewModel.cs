@@ -5,7 +5,7 @@ using RandomApp.View;
 
 namespace RandomApp.ViewModel
 {
-	public class AppItemViewModel : ViewModel
+	public class AppItemPageViewModel : ViewModel
 	{
 
 		private string fullname;
@@ -15,11 +15,11 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = value);
 		}
 
-		public AppItemViewModel()
+		public AppItemPageViewModel()
 		{
 		}
 
-		public AppItemViewModel(NavigationService navigationservice)
+		public AppItemPageViewModel(NavigationService navigationservice)
 		{
 			_navigationService = navigationservice;
 		}

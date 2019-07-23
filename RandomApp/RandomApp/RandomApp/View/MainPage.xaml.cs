@@ -16,9 +16,17 @@ namespace RandomApp
 	[DesignTimeVisible(false)]
 	public partial class MainPage : ContentPage
 	{
+		public MainPage(MainPageViewModel viewmodel)
+		{
+			InitializeComponent();
+
+			BindingContext = viewmodel;
+		}
+
 		public MainPage()
 		{
 			InitializeComponent();
+
 		}
 	}
 }

@@ -104,6 +104,9 @@ namespace RandomApp
 				ConstructorInfo constructor;
 				object[] parameters;
 
+				var thetype = type.GetType();
+				var typeinfo = type.GetTypeInfo();
+
 				if (parameter == null)
 				{
 					constructor = type.GetTypeInfo()

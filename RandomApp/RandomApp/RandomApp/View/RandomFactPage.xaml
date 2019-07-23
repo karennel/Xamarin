@@ -26,7 +26,7 @@
 					<local:CustomEditor x:Name="FactEditor" Grid.Row="0" Style="{StaticResource CustomEditorDefault}" Text="{Binding Randomfact.Text}"></local:CustomEditor>
 				</Grid>
 				<Label Grid.Row="1" Style="{StaticResource LabelHeadingTwo}"  Text="Random facts selector..."/>
-				<Button Grid.Row="4" Text="Get Random Fact" Style="{StaticResource ButtonNarrow}" Clicked="OnClicked"/>
+				<Button Grid.Row="4" Text="Get Random Fact" Style="{StaticResource ButtonNarrow}" />
 			</Grid>
 		</StackLayout>
 	</ContentPage.Content>

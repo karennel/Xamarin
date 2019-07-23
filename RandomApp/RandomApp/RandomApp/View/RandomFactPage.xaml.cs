@@ -10,22 +10,10 @@ namespace RandomApp.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RandomFactPage : ContentPage
 	{
-
-		RandomFactViewModel vm;
-
-		public RandomFactPage()
+		public RandomFactPage(RandomFactViewModel viewmodel)
 		{
-			vm = new RandomFactViewModel();
-			BindingContext = vm;
-			CustomEditor editor = new CustomEditor();
-			editor.IsVisible = true;
 			InitializeComponent();
-		}
-
-		public async void OnClicked(object o, EventArgs e)
-		{
-			var url = "https://randomuselessfact.appspot.com/random.json?language=en";
-			await vm.GetRandomFactAsync(url);
+			BindingContext = viewmodel;
 		}
 	}
 }

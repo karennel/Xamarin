@@ -57,7 +57,6 @@ namespace RandomApp.ViewModel
 
 		async void EnterCommandExecute()
 		{
-			AppItemViewModel appitemvm = new AppItemViewModel(_navigationService);
 			await _navigationService.NavigateAsync(nameof(AppItemPage));
 		}
 	}

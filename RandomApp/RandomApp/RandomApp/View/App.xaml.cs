@@ -1,26 +1,35 @@
-﻿using RandomApp.Model;
-using RandomApp.Services;
-using RandomApp.View;
-using RandomApp.ViewModel;
-using System;
+﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Ninject;
+using Ninject.Modules;
+using System.Collections.Generic;
+
+using RandomApp.View;
 
 namespace RandomApp
 {
 	public partial class App : Application
 	{
+
+		static StandardKernel _container;
+
 		public App()
 		{
 			InitializeComponent();
 
-			navigationService.Configure("MainPage", typeof(MainPage));
-			navigationService.Configure("AppItemPage", typeof(AppItemPage));
-			navigationService.Configure("RandomFactPage", typeof(RandomFactPage));
+			// build modules list
 
-			MainPageViewModel mainpagevm = new MainPageViewModel(navigationService);
+			var modules = new List<INinjectModule>
+			{
+				new RandomAppModules()
+			};
+
+			if (modules.IsNullOrEmpty())
+				throw new ArgumentNullException(nameof(modules));
+
+			ObjectFactory.Initialize(modules);
+
 			var mainPage = ((NavigationService)navigationService).SetRootPage("MainPage");
-			mainPage.BindingContext = mainpagevm; 
 			MainPage = mainPage;
 		}
 
