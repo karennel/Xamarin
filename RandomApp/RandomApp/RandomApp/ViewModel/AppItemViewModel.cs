@@ -18,19 +18,14 @@ namespace RandomApp.ViewModel
 		public AppItemViewModel()
 		{
 		}
-
-		public AppItemViewModel(NavigationService navigationservice)
-		{
-			_navigationService = navigationservice;
-		}
+		
 
 		ICommand randomfactCommand;
 		public ICommand RandomFactCommand => randomfactCommand = randomfactCommand ?? XFHelper.CreateCommand(RandomFactCommandExecute);
 
 		async void RandomFactCommandExecute()
 		{
-			RandomFactViewModel appitemvm = new RandomFactViewModel(_navigationService);
-			await _navigationService.NavigateAsync(nameof(RandomFactPage)); ;
+			//await _navigator.PushAsync(nameof(RandomFactPage)); ;
 		}
 	}
 }

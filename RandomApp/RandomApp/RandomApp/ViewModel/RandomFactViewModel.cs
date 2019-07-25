@@ -30,12 +30,7 @@ namespace RandomApp.ViewModel
 
 
 		public RandomFactViewModel() { }
-
-		public RandomFactViewModel(NavigationService navigationservice)
-		{
-			_navigationService = navigationservice;
-		}
-
+        
 		public async Task GetRandomFactAsync(string url)
 		{
 

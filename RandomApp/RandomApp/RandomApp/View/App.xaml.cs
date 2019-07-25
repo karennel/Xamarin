@@ -19,10 +19,6 @@ namespace RandomApp
 		{
 			InitializeComponent();
 
-			navigationService.Configure("MainPage", typeof(MainPage));
-			navigationService.Configure("AppItemPage", typeof(AppItemPage));
-			navigationService.Configure("RandomFactPage", typeof(RandomFactPage));
-
 			modules = new List<INinjectModule>();
 
 			modules.AddRange
@@ -35,13 +31,19 @@ namespace RandomApp
 
 			ObjectFactory.Initialize(modules);
 
-			MainPageViewModel mainpagevm = new MainPageViewModel(navigationService);
-			var mainPage = ((NavigationService)navigationService).SetRootPage("MainPage");
-			mainPage.BindingContext = mainpagevm; 
-			MainPage = mainPage;
-		}
+			var mainPage = new NavigationPage(ObjectFactory.Get<MainPage>());
 
-		public static NavigationService navigationService { get; } = new NavigationService();
+            InitNavigator(mainPage.Navigation);
+
+            MainPage = mainPage;
+		}
+        static void InitNavigator(INavigation navigation)
+        {
+            var navigationservice = ObjectFactory.Get<INavigationService>();
+            navigationservice = new NavigationService();
+            navigationservice.Initialize(navigation);
+        }
+
 
 		protected override void OnStart()
 		{

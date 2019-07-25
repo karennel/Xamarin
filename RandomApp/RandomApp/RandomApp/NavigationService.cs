@@ -11,16 +11,32 @@ using Ninject;
 namespace RandomApp
 {
 
-	public class NavigationService : INavigationService
+    public static class NavigatorServiceStatic
+    {
+        public static Lazy<INavigationService> Instance = new Lazy<INavigationService>(() => ObjectFactory.Get<INavigationService>());
+    }
+
+    public class NavigationService : INavigationService
 	{
 
-		private readonly object _sync = new object();
+        INavigation _navigation;
+
+        private readonly object _sync = new object();
 		private readonly Dictionary<string, Type> _pagesByKey = new Dictionary<string, Type>();
 		private readonly Stack<NavigationPage> _navigationPageStack =
 				new Stack<NavigationPage>();
 		private NavigationPage CurrentNavigationPage => _navigationPageStack.Peek();
 
-		public void Configure(string pageKey, Type pageType)
+        public NavigationService()
+        {
+        }
+
+        public void Initialize(INavigation navigation)
+        {
+            _navigation = navigation;
+        }
+
+        public void Configure(string pageKey, Type pageType)
 		{
 			lock (_sync)
 			{
@@ -35,16 +51,36 @@ namespace RandomApp
 			}
 		}
 
-		public Page SetRootPage(string rootPageKey)
-		{
-			var rootPage = GetPage(rootPageKey);
-			_navigationPageStack.Clear();
-			var mainPage = new NavigationPage(rootPage);
-			_navigationPageStack.Push(mainPage);
-			return mainPage;
-		}
 
-		public string CurrentPageKey
+        public async Task PushFeature(Feature feature, bool animated = true)
+        {
+            CurrentFeature = feature;
+
+            switch (feature)
+            {
+                // Customer value proposition
+                case Feature.AppItem:
+                    await PushAsync<AppItemPage>(animated);
+                    break;
+
+                case Feature.RandomFact:
+                    await PushAsync<RandomFactPage>(animated);
+                    break;
+
+            }
+        }
+
+
+        //public Page SetRootPage(string rootPageKey)
+        //{
+        //	var rootPage = GetPage(rootPageKey);
+        //	_navigationPageStack.Clear();
+        //	var mainPage = new NavigationPage(rootPage);
+        //	_navigationPageStack.Push(mainPage);
+        //	return mainPage;
+        //}
+
+        public string CurrentPageKey
 		{
 			get
 			{
@@ -82,74 +118,10 @@ namespace RandomApp
 
 			await CurrentNavigationPage.PopAsync();
 		}
-	
-		public async Task NavigateAsync(string pageKey, bool animated = true)
-		{
-			await NavigateAsync(pageKey, null, animated);
-		}
-
-		public async Task NavigateAsync(string pageKey, object parameter, bool animated = true)
-		{
-			var page = GetPage(pageKey, parameter);
-			await CurrentNavigationPage.Navigation.PushAsync(page, animated);
-		}
-
-		private async Page GetPage<TView>(string pageKey, object parameter = null) where TView : IView
-		{
-
-			 return await Task.Run(() => ObjectFactory._container.Get<TView>());
-
-
-			//lock (_sync)
-			//{
-			//	if (!_pagesByKey.ContainsKey(pageKey))
-			//	{
-			//		throw new ArgumentException(
-			//				$"No such page: {pageKey}. Did you forget to call NavigationService.Configure?");
-			//	}
-
-			//	var type = _pagesByKey[pageKey];
-			//	ConstructorInfo constructor;
-			//	object[] parameters;
-
-			//	if (parameter == null)
-			//	{
-			//		constructor = type.GetTypeInfo()
-			//				.DeclaredConstructors
-			//				.FirstOrDefault(c => !c.GetParameters().Any());
-
-			//		parameters = new object[]
-			//		{
-			//		};
-			//	}
-			//	else
-			//	{
-			//		constructor = type.GetTypeInfo()
-			//				.DeclaredConstructors
-			//				.FirstOrDefault(
-			//						c =>
-			//						{
-			//							var p = c.GetParameters();
-			//							return p.Length == 1
-			//													 && p[0].ParameterType == parameter.GetType();
-			//						});
-
-			//		parameters = new[]
-			//		{
-			//							parameter
-			//					};
-			//	}
-
-			//	if (constructor == null)
-			//	{
-			//		throw new InvalidOperationException(
-			//				"No suitable constructor found for page " + pageKey);
-			//	}
-
-			//	var page = constructor.Invoke(parameters) as Page;
-
-			//	return page;
-		}
+	    public async Task PushAsync<TPage>(TPage page, bool animated = true) where TPage : Page
+        {
+            var thepage = ObjectFactory._container.Get<TPage>();
+            await CurrentNavigationPage.Navigation.PushAsync(thepage, animated);
 		}
 	}
 }

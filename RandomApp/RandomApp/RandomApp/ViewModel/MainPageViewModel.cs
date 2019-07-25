@@ -45,11 +45,6 @@ namespace RandomApp.ViewModel
 		{
 		}
 
-		public MainPageViewModel(NavigationService navigationService)
-		{
-			_navigationService = navigationService;
-		}
-
 		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); } 
 
 		ICommand enterCommand;
@@ -57,8 +52,10 @@ namespace RandomApp.ViewModel
 
 		async void EnterCommandExecute()
 		{
-			AppItemViewModel appitemvm = new AppItemViewModel(_navigationService);
-			await _navigationService.NavigateAsync(nameof(AppItemPage));
-		}
+            AppItemViewModel appitemvm = new AppItemViewModel();
+            appitemvm.FullName = this.FullName;
+            AppItemPage appitempage = new AppItemPage(appitemvm);
+            await _navigationService.PushFeature(Feature.AppItem);
+        }
 	}
 }

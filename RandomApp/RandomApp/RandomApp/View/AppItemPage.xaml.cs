@@ -1,4 +1,5 @@
 ﻿using RandomApp.View;
+using RandomApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,10 @@ namespace RandomApp.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AppItemPage : ContentPage
 	{
-		public AppItemPage(string FullName)
+		public AppItemPage(AppItemViewModel viewmodel)
 		{
 			InitializeComponent();
+            BindingContext = viewmodel;
 		}
 	}
 }
