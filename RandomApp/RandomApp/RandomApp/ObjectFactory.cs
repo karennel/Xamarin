@@ -8,7 +8,7 @@ namespace RandomApp
 {
 	public static class ObjectFactory
 	{
-		static StandardKernel _container;
+		public static StandardKernel _container;
 
 		public static void Initialize(IEnumerable<INinjectModule> modules = null)
 		{

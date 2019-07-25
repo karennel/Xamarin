@@ -5,10 +5,15 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+using RandomApp.View;
+using Ninject;
+
 namespace RandomApp
 {
+
 	public class NavigationService : INavigationService
 	{
+
 		private readonly object _sync = new object();
 		private readonly Dictionary<string, Type> _pagesByKey = new Dictionary<string, Type>();
 		private readonly Stack<NavigationPage> _navigationPageStack =
@@ -89,59 +94,62 @@ namespace RandomApp
 			await CurrentNavigationPage.Navigation.PushAsync(page, animated);
 		}
 
-		private Page GetPage(string pageKey, object parameter = null)
+		private async Page GetPage<TView>(string pageKey, object parameter = null) where TView : IView
 		{
 
-			lock (_sync)
-			{
-				if (!_pagesByKey.ContainsKey(pageKey))
-				{
-					throw new ArgumentException(
-							$"No such page: {pageKey}. Did you forget to call NavigationService.Configure?");
-				}
+			 return await Task.Run(() => ObjectFactory._container.Get<TView>());
 
-				var type = _pagesByKey[pageKey];
-				ConstructorInfo constructor;
-				object[] parameters;
 
-				if (parameter == null)
-				{
-					constructor = type.GetTypeInfo()
-							.DeclaredConstructors
-							.FirstOrDefault(c => !c.GetParameters().Any());
+			//lock (_sync)
+			//{
+			//	if (!_pagesByKey.ContainsKey(pageKey))
+			//	{
+			//		throw new ArgumentException(
+			//				$"No such page: {pageKey}. Did you forget to call NavigationService.Configure?");
+			//	}
 
-					parameters = new object[]
-					{
-					};
-				}
-				else
-				{
-					constructor = type.GetTypeInfo()
-							.DeclaredConstructors
-							.FirstOrDefault(
-									c =>
-									{
-										var p = c.GetParameters();
-										return p.Length == 1
-																 && p[0].ParameterType == parameter.GetType();
-									});
+			//	var type = _pagesByKey[pageKey];
+			//	ConstructorInfo constructor;
+			//	object[] parameters;
 
-					parameters = new[]
-					{
-										parameter
-								};
-				}
+			//	if (parameter == null)
+			//	{
+			//		constructor = type.GetTypeInfo()
+			//				.DeclaredConstructors
+			//				.FirstOrDefault(c => !c.GetParameters().Any());
 
-				if (constructor == null)
-				{
-					throw new InvalidOperationException(
-							"No suitable constructor found for page " + pageKey);
-				}
+			//		parameters = new object[]
+			//		{
+			//		};
+			//	}
+			//	else
+			//	{
+			//		constructor = type.GetTypeInfo()
+			//				.DeclaredConstructors
+			//				.FirstOrDefault(
+			//						c =>
+			//						{
+			//							var p = c.GetParameters();
+			//							return p.Length == 1
+			//													 && p[0].ParameterType == parameter.GetType();
+			//						});
 
-				var page = constructor.Invoke(parameters) as Page;
-			
-				return page;
-			}
+			//		parameters = new[]
+			//		{
+			//							parameter
+			//					};
+			//	}
+
+			//	if (constructor == null)
+			//	{
+			//		throw new InvalidOperationException(
+			//				"No suitable constructor found for page " + pageKey);
+			//	}
+
+			//	var page = constructor.Invoke(parameters) as Page;
+
+			//	return page;
+		}
 		}
 	}
 }
