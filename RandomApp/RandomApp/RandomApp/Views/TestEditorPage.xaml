@@ -5,7 +5,7 @@
 							xmlns:local="clr-namespace:RandomApp.Controls"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RandomApp.View.TestEditorPage">
+             x:Class="RandomApp.Views.TestEditorPage">
     <ContentPage.Content>
         <StackLayout>
 			<!--<Editor Placeholder="This is the editor text"

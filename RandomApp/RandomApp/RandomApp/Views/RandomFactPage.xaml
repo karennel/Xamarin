@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
 						 xmlns:local="clr-namespace:RandomApp.Controls"
-             x:Class="RandomApp.View.RandomFactPage"
+             x:Class="RandomApp.Views.RandomFactPage"
 							NavigationPage.HasNavigationBar="False"
 						 BackgroundImageSource="background.jpg">
     <ContentPage.Content>

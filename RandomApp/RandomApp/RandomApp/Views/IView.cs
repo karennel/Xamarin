@@ -1,6 +1,6 @@
 ﻿
 
-namespace RandomApp.View
+namespace RandomApp.Views
 {
 	public interface IView
 	{

@@ -5,7 +5,7 @@
 						xmlns:local="clr-namespace:RandomApp.ViewModel"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RandomApp.View.TestCommandView">
+             x:Class="RandomApp.Views.TestCommandView">
 	<StackLayout>
 		<Grid>
 			<Grid.BindingContext>

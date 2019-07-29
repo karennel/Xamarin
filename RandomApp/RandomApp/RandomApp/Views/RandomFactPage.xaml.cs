@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 using RandomApp.ViewModel;
 using RandomApp.Controls;
 
-namespace RandomApp.View
+namespace RandomApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RandomFactPage : ContentPage

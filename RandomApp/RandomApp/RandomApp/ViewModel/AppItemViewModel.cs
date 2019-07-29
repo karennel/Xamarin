@@ -1,7 +1,6 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
 using RandomApp.Services;
-using RandomApp.View;
 
 namespace RandomApp.ViewModel
 {

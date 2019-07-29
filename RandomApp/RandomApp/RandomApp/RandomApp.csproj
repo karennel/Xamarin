@@ -22,25 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\TestButtonPage.xaml.cs">
-      <DependentUpon>TestButtonPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="View\AppItemPage.xaml">
+    <EmbeddedResource Update="Views\AppItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\RandomFactPage.xaml">
+    <EmbeddedResource Update="Views\RandomFactPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\TestButtonPage.xaml">
+    <EmbeddedResource Update="Views\TestCommandView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\TestCommandView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\TestEditorPage.xaml">
+    <EmbeddedResource Update="Views\TestEditorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

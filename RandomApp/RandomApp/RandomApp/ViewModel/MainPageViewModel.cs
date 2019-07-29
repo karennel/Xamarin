@@ -1,10 +1,9 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
-using RandomApp.Services;
-using RandomApp.View;
+using RandomApp.Views;
 
 namespace RandomApp.ViewModel
-{ 
+{
 	public class MainPageViewModel : ViewModel
 	{
 
@@ -45,17 +44,16 @@ namespace RandomApp.ViewModel
 		{
 		}
 
-		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); } 
+		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); }
 
 		ICommand enterCommand;
 		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterCommandExecute, () => IsSubmitActive());
 
 		async void EnterCommandExecute()
 		{
-            AppItemViewModel appitemvm = new AppItemViewModel();
-            appitemvm.FullName = this.FullName;
-            AppItemPage appitempage = new AppItemPage(appitemvm);
-            await _navigationService.PushFeature(Feature.AppItem);
-        }
+			AppItemViewModel appitemvm = new AppItemViewModel();
+			appitemvm.FullName = this.FullName;
+			AppItemPage appitempage = new AppItemPage(appitemvm);
+		}
 	}
 }

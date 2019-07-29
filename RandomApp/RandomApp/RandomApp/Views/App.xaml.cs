@@ -1,12 +1,6 @@
 ﻿using Ninject.Modules;
-using RandomApp.Model;
-using RandomApp.Services;
-using RandomApp.View;
-using RandomApp.ViewModel;
-using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace RandomApp
 {
@@ -33,17 +27,8 @@ namespace RandomApp
 
 			var mainPage = new NavigationPage(ObjectFactory.Get<MainPage>());
 
-            InitNavigator(mainPage.Navigation);
-
-            MainPage = mainPage;
+			MainPage = mainPage;
 		}
-        static void InitNavigator(INavigation navigation)
-        {
-            var navigationservice = ObjectFactory.Get<INavigationService>();
-            navigationservice = new NavigationService();
-            navigationservice.Initialize(navigation);
-        }
-
 
 		protected override void OnStart()
 		{

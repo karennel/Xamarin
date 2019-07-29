@@ -11,9 +11,7 @@ namespace RandomApp.ViewModel
 	public abstract class ViewModel : IViewModel
 	{
 
-        protected readonly NavigationService _navigationService = null;
-
-        public event PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		bool _isBusy;
 		public bool IsBusy

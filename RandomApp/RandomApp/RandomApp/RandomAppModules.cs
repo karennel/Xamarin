@@ -6,8 +6,8 @@ namespace RandomApp
 	{
 		public override void Load()
 		{
-			Bind<INavigationService>().To<NavigationService>()
-			 .InSingletonScope();
+			//Bind<INavigationService>().To<NavigationService>()
+			// .InSingletonScope();
 		}
 	}
 }

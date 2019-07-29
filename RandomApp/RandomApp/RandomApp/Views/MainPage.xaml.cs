@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
 
-using RandomApp.View;
 using RandomApp.ViewModel;
 
 namespace RandomApp
@@ -19,7 +13,7 @@ namespace RandomApp
 		public MainPage(MainPageViewModel viewmodel)
 		{
 			InitializeComponent();
-            BindingContext = viewmodel;
+			BindingContext = viewmodel;
 		}
 	}
 }
