@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+
 using RandomApp.Views;
 
 namespace RandomApp.ViewModel
@@ -40,9 +42,7 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
 		}
 
-		public MainPageViewModel()
-		{
-		}
+		public MainPageViewModel() {}
 
 		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); }
 
@@ -51,9 +51,8 @@ namespace RandomApp.ViewModel
 
 		async void EnterCommandExecute()
 		{
-			AppItemViewModel appitemvm = new AppItemViewModel();
-			appitemvm.FullName = this.FullName;
-			AppItemPage appitempage = new AppItemPage(appitemvm);
+			var navigator = ObjectFactory.Get<INavigator>();
+			await navigator.PushFeature(Feature.AppItem);
 		}
 	}
 }

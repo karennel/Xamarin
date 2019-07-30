@@ -24,7 +24,10 @@ namespace RandomApp.ViewModel
 
 		async void RandomFactCommandExecute()
 		{
-			//await _navigator.PushAsync(nameof(RandomFactPage)); ;
+
+			//GetRandomFactAsync();
+						var navigator = ObjectFactory.Get<INavigator>();
+			await navigator.PushFeature(Feature.RandomFact);
 		}
 	}
 }

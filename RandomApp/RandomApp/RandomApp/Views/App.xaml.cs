@@ -27,7 +27,15 @@ namespace RandomApp
 
 			var mainPage = new NavigationPage(ObjectFactory.Get<MainPage>());
 
+			InitNavigator(mainPage.Navigation);
+
 			MainPage = mainPage;
+		}
+
+		static void InitNavigator(INavigation navigation)
+		{
+			var navigator = ObjectFactory.Get<INavigator>();
+			navigator.Initialize(navigation);
 		}
 
 		protected override void OnStart()

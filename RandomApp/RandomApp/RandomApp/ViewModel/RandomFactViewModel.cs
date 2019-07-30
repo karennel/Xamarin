@@ -9,48 +9,36 @@ namespace RandomApp.ViewModel
 	public class RandomFactViewModel : ViewModel
 	{
 
-		private RandomFact randomfact;
-		public RandomFact Randomfact
+		private string randomfacttext;
+		public string RandomFactText
 		{
-			get => randomfact;
-			set
-			{
-				randomfact.Text = value.Text;
-				randomfact.PermaLink = value.PermaLink;
-				randomfact.SourceURL = value.SourceURL;
-				randomfact.Language = value.Language;
-				randomfact.Source = value.Source;
-			}
+			get => randomfacttext;
+			set => SetObservableProperty(randomfacttext, value, () => randomfacttext = value);
 		}
 
-
 		public RandomFactViewModel() { }
-        
-		public async Task GetRandomFactAsync(string url)
+
+		public async Task GetRandomFactAsync()
 		{
 
+			RandomFact randomresponse;
 			try
 			{
+				
+				var url = "https://randomuselessfact.appspot.com/random.json?language=en";
+
 				HttpClient client = new HttpClient();
 				client.BaseAddress = new Uri(url);
 				var response = await client.GetAsync(client.BaseAddress);
 				response.EnsureSuccessStatusCode();
 				var JsonResult = response.Content.ReadAsStringAsync().Result;
-				randomfact = JsonConvert.DeserializeObject<RandomFact>(JsonResult);
+				randomresponse = JsonConvert.DeserializeObject<RandomFact>(JsonResult);
+				randomfacttext = randomresponse.Text;
+
 				//randomfact.Text = "This is where the random fact will be displayed. This is where the random fact will be displayed. This is where the random fact will be displayed. This is where the random fact will be displayed. This is where the random fact will be displayed. This is where the random fact will be displayed. This is where the random fact will be displayed. ";
-				Randomfact = randomfact;
-			}			
-			catch 
+			}
+			catch
 			{
-
-				randomfact = new RandomFact();
-
-				randomfact.PermaLink = "not found";
-				randomfact.SourceURL = "not found";
-				randomfact.Language = "not found";
-				randomfact.Source = "not found";
-				randomfact.Text = "Unable to get any random facts at the moment." + "/\n" + "Sorry!!!!";
-				Randomfact = randomfact;	
 			}
 		}
 	}

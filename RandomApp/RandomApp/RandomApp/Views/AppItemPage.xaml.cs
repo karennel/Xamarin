@@ -10,7 +10,6 @@ using Xamarin.Forms.Xaml;
 
 namespace RandomApp.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AppItemPage : ContentPage
 	{
 		public AppItemPage(AppItemViewModel viewmodel)
