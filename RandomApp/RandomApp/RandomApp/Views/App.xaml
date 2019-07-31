@@ -55,6 +55,7 @@
 
 			<!--Platform specific-->
 			<OnPlatform x:Key="ButtonHeight" x:TypeArguments="x:Double" Android="50.0" iOS="40.0" />
+			<OnPlatform x:Key="ButtonWidth" x:TypeArguments="x:Double" Android="200.0" iOS="200.0" />
 			<OnPlatform x:Key="ButtonBorderRadius" x:TypeArguments="x:Int32" Android="50" iOS="22" />
 			<OnPlatform x:Key="EntryHeight" x:TypeArguments="x:Double" Android="45.0" iOS="55.0" />
 			<OnPlatform x:Key="LabelDarkHeight" x:TypeArguments="x:Double" Android="45.0" iOS="55.0" />
@@ -83,12 +84,16 @@
 			<!--Button styles-->
 			<Style x:Key="ButtonBase" TargetType="Button">
 				<Setter Property="CornerRadius" Value="{StaticResource ButtonBorderRadius}" />
-				<Setter Property="FontFamily" Value="{StaticResource FontLight}" />
+				<Setter Property="FontFamily" Value="{StaticResource FontRegular}" />
 				<Setter Property="FontSize" Value="{StaticResource FontSizeMedium}" />
 				<Setter Property="HeightRequest" Value="{StaticResource ButtonHeight}" />
+				<Setter Property="WidthRequest" Value="{StaticResource ButtonWidth}" />
+				<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"/>
+				<Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
 				<Style.Triggers>
 					<Trigger TargetType="Button" Property="IsEnabled" Value="true">
-						<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"/>
+						<!--<Setter Property="BackgroundColor" Value="{StaticResource ColorBackgroundLight}"/>-->
+						<Setter Property="TextColor" Value="{StaticResource ColorBlack}" />
 						<Setter Property="FontFamily" Value="{StaticResource FontBold}"/>
 					</Trigger>
 				</Style.Triggers>
