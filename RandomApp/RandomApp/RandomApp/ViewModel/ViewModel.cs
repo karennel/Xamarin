@@ -11,6 +11,7 @@ namespace RandomApp.ViewModel
 	public abstract class ViewModel : IViewModel
 	{
 
+
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		bool _isBusy;
@@ -62,5 +63,13 @@ namespace RandomApp.ViewModel
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
+
+		protected readonly INavigator _navigator;
+
+		protected ViewModel(INavigator navigator)
+		{
+			_navigator = navigator;
+		}
+
 	}
 }

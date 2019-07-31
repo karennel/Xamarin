@@ -42,7 +42,12 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
 		}
 
-		public MainPageViewModel() {}
+		public MainPageViewModel
+		(
+				INavigator navigator
+		) : base (navigator) 
+		{
+		}
 
 		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); }
 

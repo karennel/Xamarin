@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>android_oreo_8_1_-_api_27</SelectedDevice>
     <DefaultDevice>android_oreo_8_1_-_api_27</DefaultDevice>
+    <AndroidDesignerPreferredTheme>Theme.DeviceDefault.Light.NoActionBar.Fullscreen</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

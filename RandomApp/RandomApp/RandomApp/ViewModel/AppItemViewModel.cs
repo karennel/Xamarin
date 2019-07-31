@@ -1,11 +1,13 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
-using RandomApp.Services;
+using RandomApp.Controller;
 
 namespace RandomApp.ViewModel
 {
 	public class AppItemViewModel : ViewModel
 	{
+
+		IAppItemPageController _appitempageController;
 
 		private string fullname;
 		public string FullName
@@ -14,8 +16,13 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(fullname, value, () => fullname = value);
 		}
 
-		public AppItemViewModel()
+		public AppItemViewModel
+					(
+							INavigator navigator,
+							IAppItemPageController appitempageController
+					) : base (navigator)
 		{
+			_appitempageController = appitempageController;
 		}
 		
 
@@ -26,7 +33,7 @@ namespace RandomApp.ViewModel
 		{
 
 			//GetRandomFactAsync();
-						var navigator = ObjectFactory.Get<INavigator>();
+			var navigator = ObjectFactory.Get<INavigator>();
 			await navigator.PushFeature(Feature.RandomFact);
 		}
 	}

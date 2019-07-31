@@ -74,7 +74,7 @@ namespace RandomApp.ViewModel
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public TestCommandViewModel()
+		public TestCommandViewModel(Navigator navigator) : base (navigator)
 		{
 			TestCommand = new Command(
 				execute: () =>

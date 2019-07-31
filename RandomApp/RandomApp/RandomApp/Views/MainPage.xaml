@@ -13,11 +13,6 @@
 
 	<ContentView>
 		<StackLayout Margin="20,20,20,30" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
-			<Grid>
-				<Grid.BindingContext>
-					<vm:MainPageViewModel/>
-				</Grid.BindingContext>
-			</Grid>
 			<Grid  VerticalOptions="StartAndExpand" RowSpacing="8">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="100"></RowDefinition>

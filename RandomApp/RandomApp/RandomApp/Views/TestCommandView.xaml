@@ -8,9 +8,7 @@
              x:Class="RandomApp.Views.TestCommandView">
 	<StackLayout>
 		<Grid>
-			<Grid.BindingContext>
-				<local:TestCommandViewModel/> 
-			</Grid.BindingContext>
+			
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*"></RowDefinition>
 				<RowDefinition Height="*"></RowDefinition>

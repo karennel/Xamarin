@@ -1,4 +1,5 @@
 ﻿using Ninject.Modules;
+using RandomApp.Controller;
 
 namespace RandomApp
 {
@@ -8,6 +9,11 @@ namespace RandomApp
 		{
 			Bind<INavigator>().To<Navigator>()
 			 .InSingletonScope();
+
+			Bind<IAppItemPageController>().To<AppItemPageController>();
+
+			Bind<IRandomFactController>().To<RandomFactController>();
+
 		}
 	}
 }

@@ -7,11 +7,6 @@
 						BackgroundImageSource="background.jpg">
 
 	<StackLayout>
-		<Grid>
-			<Grid.BindingContext>
-				<local:AppItemViewModel/>
-			</Grid.BindingContext>
-		</Grid>
 		<Grid Padding="20,15,20,15" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"></RowDefinition>
