@@ -45,7 +45,7 @@
 							HorizontalOptions="Center"
 							Style="{StaticResource ButtonBase}"
 							Command="{Binding EnterCommand}"
-							CommandParameter="{Binding FullName}"
+							CommandParameter="{Binding Fullnameparam}"
 							/>
 			</Grid>
 		</StackLayout>

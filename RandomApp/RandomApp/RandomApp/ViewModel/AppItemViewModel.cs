@@ -9,13 +9,6 @@ namespace RandomApp.ViewModel
 
 		IAppItemPageController _appitempageController;
 
-		private string fullname;
-		public string FullName
-		{
-			get => fullname;
-			set => SetObservableProperty(fullname, value, () => fullname = value);
-		}
-
 		public AppItemViewModel
 					(
 							INavigator navigator,
@@ -24,7 +17,13 @@ namespace RandomApp.ViewModel
 		{
 			_appitempageController = appitempageController;
 		}
-		
+
+		private string fullname;
+		public string FullName
+		{
+			get => fullname;
+			set => SetObservableProperty(fullname, value, () => fullname = value);
+		}
 
 		ICommand randomfactCommand;
 		public ICommand RandomFactCommand => randomfactCommand = randomfactCommand ?? XFHelper.CreateCommand(RandomFactCommandExecute);

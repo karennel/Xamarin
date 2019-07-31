@@ -16,7 +16,7 @@ namespace RandomApp.ViewModel
 			set
 			{
 				SetObservableProperty(firstname, value, () => firstname = value);
-				FullName = FirstName + " " + Surname;
+				Fullnameparam = FirstName + " " + Surname;
 				if (IsSubmitActive())
 					(EnterCommand as Command).ChangeCanExecute();
 			}
@@ -29,17 +29,17 @@ namespace RandomApp.ViewModel
 			set
 			{
 				SetObservableProperty(surname, value, () => surname = value);
-				FullName = FirstName + " " + Surname;
+				Fullnameparam = FirstName + " " + Surname;
 				if (IsSubmitActive())
 					(EnterCommand as Command).ChangeCanExecute();
 			}
 		}
 
-		private string fullname;
-		public string FullName
+		private string fullnameparam;
+		public string Fullnameparam
 		{
-			get => fullname;
-			set => SetObservableProperty(fullname, value, () => fullname = firstname + " " + surname);
+			get => fullnameparam;
+			set => SetObservableProperty(fullnameparam, value, () => fullnameparam = firstname + " " + surname);
 		}
 
 		public MainPageViewModel
@@ -52,9 +52,17 @@ namespace RandomApp.ViewModel
 		bool IsSubmitActive() { return (((string.IsNullOrEmpty(firstname)) || (string.IsNullOrEmpty(surname))) ? false : true); }
 
 		ICommand enterCommand;
-		public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterCommandExecute, () => IsSubmitActive());
+		//public ICommand EnterCommand => enterCommand = enterCommand ?? XFHelper.CreateCommand(EnterCommandExecute, () => IsSubmitActive());
 
-		async void EnterCommandExecute()
+		public ICommand EnterCommand
+		{
+			get
+			{
+				return new Command<string>((FullName) => EnterCommandExecute(FullName));
+			}
+		}
+
+		async void EnterCommandExecute(string fullname)
 		{
 			var navigator = ObjectFactory.Get<INavigator>();
 			await navigator.PushFeature(Feature.AppItem);

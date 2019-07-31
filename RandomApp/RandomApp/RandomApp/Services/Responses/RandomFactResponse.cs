@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RandomApp.Services.Responses
 {
-	public class RandomFactResponse
+	public class RandomFactResponse : Response
 	{
 
 		[JsonProperty("Text")]
