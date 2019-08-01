@@ -20,7 +20,7 @@
 					Text="Hi" Grid.Row="0" />
 			<Label 
 					Style="{StaticResource LabelHeading}" 
-					Text="{Binding Fullnameparam}" 
+					Text="{Binding FullName}" 
 					Grid.Row="1" />
 			<Button Grid.Row="2" Style="{StaticResource ButtonBase}"  Text="Display random facts..."
 								Command="{Binding RandomFactCommand}"/>

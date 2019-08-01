@@ -15,8 +15,6 @@ namespace RandomApp
 
 			Bind<IRandomFactController>().To<RandomFactController>();
 
-			Bind<IRandomFactManager>().To<RandomFactManager>();
-
 		}
 	}
 }
