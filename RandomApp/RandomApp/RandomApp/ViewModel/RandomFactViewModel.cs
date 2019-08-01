@@ -1,5 +1,6 @@
 ﻿using RandomApp.Controller;
 using RandomApp.Services;
+using RandomApp.Services.Responses;
 using System.Windows.Input;
 
 namespace RandomApp.ViewModel
@@ -8,8 +9,16 @@ namespace RandomApp.ViewModel
 
 	public class RandomFactViewModel : ViewModel
 	{
+		readonly IRandomFactServicesManagement _randomFactServicesManagement;
 
-		IRandomFactController _randomFactController;
+		public RandomFactViewModel
+				(
+					INavigator navigator,
+					IRandomFactServicesManagement randomFactServicesManagement
+				) : base(navigator)
+		{
+			_randomFactServicesManagement = randomFactServicesManagement;
+		}
 
 		private string randomfacttext;
 		public string RandomFactText
@@ -18,21 +27,13 @@ namespace RandomApp.ViewModel
 			set => SetObservableProperty(randomfacttext, value, () => randomfacttext = value);
 		}
 
-		public RandomFactViewModel
-				(
-					INavigator navigator, 
-					IRandomFactController randomFactController
-				) : base(navigator)
-		{
-			_randomFactController = randomFactController;
-		}
-
 		ICommand randomfactCommand;
 		public ICommand RandomFactCommand => randomfactCommand = randomfactCommand ?? XFHelper.CreateCommand(RandomFactCommandExecute);
 
-		/*async*/ void RandomFactCommandExecute()
+		async void RandomFactCommandExecute()
 		{
-			_randomFactController.Test();
+
+			await _randomFactServicesManagement.RandomFact();
 		}
 	}
 }

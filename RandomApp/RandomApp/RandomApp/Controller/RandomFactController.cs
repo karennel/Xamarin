@@ -12,9 +12,9 @@ namespace RandomApp.Controller
 			return;
 		}
 
-		public async Task<RandomFactResponse> RandomFact()
-		{
-			
-		}
+		//public async Task<RandomFactResponse> RandomFact()
+		//{
+
+		//}
 	}
 }

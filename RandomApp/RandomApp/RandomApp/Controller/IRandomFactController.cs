@@ -7,6 +7,6 @@ namespace RandomApp.Controller
 	{
 		Task Test();
 
-		Task<RandomFactResponse> RandomFact();
+		//Task<RandomFactResponse> RandomFact();
 	}
 }
