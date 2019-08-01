@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 
 using RandomApp.ViewModel;
+using RandomApp.EndPoints;
 
 namespace RandomApp
 {
@@ -11,6 +12,14 @@ namespace RandomApp
 		{
 			InitializeComponent();
 			BindingContext = viewmodel;
+
+			InitEndPointsManager();
+		}
+
+
+		void InitEndPointsManager()
+		{
+			ObjectFactory.Get<IEndPointsManager>().Init();
 		}
 	}
 }
