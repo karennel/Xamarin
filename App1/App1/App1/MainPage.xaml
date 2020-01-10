@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage">
+
+	<StackLayout  Margin="10" Padding="10">
+
+		<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"></ColumnDefinition>
+						<ColumnDefinition Width="2*"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"></RowDefinition>
+						<RowDefinition Height="*"></RowDefinition>
+					</Grid.RowDefinitions>
+
+					<Label Text="Entry String" 
+           HorizontalOptions="Start"
+           VerticalOptions="Center"
+					 Grid.Row="0" Grid.Column="0" />
+					<Entry Text="{Binding appstring}"
+					 Grid.Row="0" Grid.Column="1" 
+					 HorizontalOptions="StartAndExpand"
+					 VerticalOptions="Center"
+					 Placeholder="Enter something"
+					/>
+
+					<Label Text="Copied String" 
+           HorizontalOptions="Start"
+           VerticalOptions="Center" 
+					 Grid.Row="1" Grid.Column="0"/>
+					<Label Grid.Row="1" Grid.Column="1" 
+						Text="{Binding newappstring}"
+					 HorizontalOptions="StartAndExpand"
+					 VerticalOptions="Center"/>
+				</Grid>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<Button Text="Copy String" 
+						Command="{Binding ExecuteButtonCommand}" 
+						IsEnabled="{Binding buttonactive}"
+							Grid.Column="0" Grid.Row="0">
+			</Button>
+
+			<Button Text="Button2" 
+							Command="{Binding ExecuteButton2Command}"
+							Grid.Column="2" Grid.Row="0">
+			</Button>
+			<ActivityIndicator IsRunning="{Binding taskactive}" Grid.Column="1" Grid.Row="2"></ActivityIndicator>
+		</Grid>
+	</StackLayout>
+
+</ContentPage>
